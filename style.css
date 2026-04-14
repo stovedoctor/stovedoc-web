@@ -646,12 +646,19 @@ details.faq-drop[open] summary::after { content: ' —'; }
         margin-top: 10px !important;
     }
 
+ /* THE TRAY: Forces info cards into one horizontal row */
     .grid-3 { 
-        grid-template-columns: 1fr !important; 
-        justify-items: center !important; 
-        text-align: left !important;
-        gap: 0 !important; 
+        display: flex !important; 
+        flex-wrap: nowrap !important; 
+        overflow-x: auto !important; 
+        scroll-snap-type: x mandatory !important;
+        gap: 15px !important; 
+        padding: 10px 15px 25px 15px !important; 
+        -webkit-overflow-scrolling: touch;
     }
+
+    /* Hides the ugly scrollbar on the tray */
+    .grid-3::-webkit-scrollbar { display: none; }
 
     .info-card { 
         width: 100% !important; 
