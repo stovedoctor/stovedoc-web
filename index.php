@@ -29,7 +29,7 @@
 </section>
 
 <div class="info-container">
-    <div class="grid-3">
+    <div class="grid-3" data-hint="Swipe to view The Guided Repair Process ➔">
         <div class="case-file look-smoky">
             <h3 style="text-transform:uppercase; color:var(--flame);">THE DOCTOR'S DIAGNOSIS</h3>
             <p>I provide 35+ years of factory-trained logic to identify the root cause so you can stay warm and not thin your wallet.</p>
@@ -43,9 +43,6 @@
         <div class="case-file look-smoky">
             <h3 style="text-transform:uppercase; color:var(--flame);">THE $75 CONSULT</h3>
             <p>Skip the 2-week wait. Book a session and get your heat back on today.</p>
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="telehearth_booking.php" class="cta-btn">BOOK THE DOC NOW</a>
-            </div>
         </div>
     </div> </div> <div class="video-library-section">
     <h2 style="color:var(--flame); margin-bottom: 25px;">Master Class Video Sample Library</h2>
@@ -60,7 +57,7 @@
     <p style="font-style: italic; margin-top: 0; margin-bottom: 30px;">Don't guess and waste money on parts. Spot the symptom, then book the Doc.</p>
     
     
-    <div class="grid-3">
+    <div class="grid-3" data-hint="Swipe to view Symptoms ➔">
 <div class="case-file look-smoky">
     <h3 style="text-transform:uppercase; color:var(--flame);">PELPRO</h3>
     <p><strong>SYMPTOM:</strong> Blower hums but won't spin.</p>
@@ -87,13 +84,13 @@
     </div>
 
  <div id="more-spotters" style="display: none; width: 100%;">
-    <div class="grid-3" style="margin-top: 20px;">
+    <div class="grid-3" data-hint="Swipe to view Symptoms ➔" style="margin-top: 20px;">
         
         <div class="case-file look-smoky">
             <h3 style="text-transform:uppercase; color:var(--flame);">LOPI / AVALON</h3>
             <p><strong>SYMPTOM:</strong> Stove runs for 15-20 minutes, then goes cold for no reason.</p>
             <p><strong>THE REALITY:</strong> The "Proof of Fire" signal is flatlining. We’ll pull the meter out and check the resistance to find the exact break in the circuit.</p>
-        </div>
+        </div>S
 
         <div class="case-file look-smoky">
             <h3 style="text-transform:uppercase; color:var(--flame);">QUADRA-FIRE</h3>
