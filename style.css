@@ -803,19 +803,36 @@ details.faq-drop[open] summary::after { content: ' —'; }
 
 /* --- THE STOVE DOC MASTER REPAIR BLOCK --- */
 
-/* 1. Desktop Fix: Forces the scrollbar and stops the "squish" on your MSI */
+/* --- Desktop Fix: Forces the scrollbar and stops the "squish" --- */
 @media (min-width: 769px) {
     .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
-        overflow-x: auto !important;
+        overflow-x: scroll !important; /* Changed from 'auto' to 'scroll' to force it */
         justify-content: flex-start !important;
-        padding: 20px !important;
+        padding: 20px 0 40px 0 !important; /* Added bottom padding so the scrollbar isn't buried */
+        width: 100% !important;
     }
+
+    /* THE LOCK: flex-shrink: 0 ensures the cards stay 350px and DON'T squish */
     .grid-3 > div, .grid-3 .info-card, .grid-3 .box-base {
         flex: 0 0 350px !important;
         min-width: 350px !important;
+        flex-shrink: 0 !important; /* THIS IS THE KEY FOR DESKTOP */
         margin-right: 20px !important;
+        scroll-snap-align: start;
+    }
+
+    /* Force the scrollbar to be visible and ORANGE */
+    .grid-3::-webkit-scrollbar { 
+        height: 12px !important; 
+        display: block !important; 
+    }
+    .grid-3::-webkit-scrollbar-track { background: #1a1a1a; }
+    .grid-3::-webkit-scrollbar-thumb { 
+        background: #ff9900 !important; 
+        border-radius: 10px; 
+        border: 3px solid #1a1a1a;
     }
 }
 
