@@ -801,74 +801,57 @@ details.faq-drop[open] summary::after { content: ' —'; }
  /* leave this in place  */
 
 
-/* --- THE STOVE DOC MASTER REPAIR BLOCK --- */
+/* --- STOVE DOC FINAL MASTER REPAIR --- */
 
-/* --- Desktop Fix: Forces the scrollbar and stops the "squish" --- */
+/* 1. Global Tray Fix (Desktop & Laptop) */
 @media (min-width: 769px) {
     .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
-        overflow-x: scroll !important; /* Changed from 'auto' to 'scroll' to force it */
+        overflow-x: auto !important;
+        width: 100vw !important; /* Forces it to see the full width */
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 20px 20px 50px 20px !important; /* Extra bottom space for scrollbar */
         justify-content: flex-start !important;
-        padding: 20px 0 40px 0 !important; /* Added bottom padding so the scrollbar isn't buried */
-        width: 100% !important;
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* THE LOCK: flex-shrink: 0 ensures the cards stay 350px and DON'T squish */
+    /* THE NO-SQUISH RULE: Prevents desktop browsers from shrinking cards */
     .grid-3 > div, .grid-3 .info-card, .grid-3 .box-base {
         flex: 0 0 350px !important;
         min-width: 350px !important;
-        flex-shrink: 0 !important; /* THIS IS THE KEY FOR DESKTOP */
-        margin-right: 20px !important;
-        scroll-snap-align: start;
+        flex-shrink: 0 !important; 
+        margin-right: 25px !important;
     }
 
-    /* Force the scrollbar to be visible and ORANGE */
-    .grid-3::-webkit-scrollbar { 
-        height: 12px !important; 
-        display: block !important; 
-    }
-    .grid-3::-webkit-scrollbar-track { background: #1a1a1a; }
-    .grid-3::-webkit-scrollbar-thumb { 
-        background: #ff9900 !important; 
-        border-radius: 10px; 
-        border: 3px solid #1a1a1a;
-    }
+    /* Force Orange Scrollbar Visibility */
+    .grid-3::-webkit-scrollbar { height: 12px !important; display: block !important; }
+    .grid-3::-webkit-scrollbar-thumb { background: #ff9900 !important; border-radius: 10px; border: 3px solid #000; }
 }
 
-/* 2. Mobile Fix: Fixes the hanging edges and brings back the 85% peek */
+/* 2. Mobile Edge & Peek Fix (Pixel 8) */
 @media (max-width: 768px) {
-    /* Anchors the tray and adds a "buffer" so cards don't hit the screen edge */
     .grid-3, #checklist-grid {
         display: flex !important;
-        padding-left: 20px !important; 
-        padding-right: 20px !important;
         width: 100% !important;
+        padding-left: 20px !important; /* Pushes cards away from the screen edge */
+        padding-right: 20px !important;
         box-sizing: border-box !important;
     }
 
-    /* Overrides the "100% width" killer and forces the 85% peek */
-    .grid-3 > div, 
-    .grid-3 .info-card, 
-    .grid-3 .box-base,
-    .grid-3 .credential-card {
+    .grid-3 > div, .grid-3 .info-card, .grid-3 .box-base {
         flex: 0 0 85% !important;
         min-width: 85% !important;
-        width: 85% !important;
+        flex-shrink: 0 !important;
         margin-right: 15px !important;
-        scroll-snap-align: start;
     }
 
-    /* Fixes the "Hanging Gear" on FAQ/Diagnostic pages */
-    .faq-drop, .case-file {
-        width: 92% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    
-    /* Re-aligns the hint so it matches the new padding */
+    /* Floating Hint Re-alignment */
     .grid-3[data-hint]::before {
         right: 25px !important;
-        top: -5px !important;
+        top: -10px !important;
+        background: #000; /* Adds a solid back to the text so it doesn't blur with lines */
+        padding: 2px 8px;
     }
 }
