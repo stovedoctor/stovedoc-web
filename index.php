@@ -123,21 +123,7 @@
     </p>
 </section>
 
-<script>
-function toggleSpotters() {
-    var x = document.getElementById("more-spotters");
-    var link = document.getElementById("more-link");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-        link.innerHTML = "- VIEW LESS";
-    } else {
-        x.style.display = "none";
-        link.innerHTML = "+ VIEW MORE SPOTTERS";
-    }
-}
-</script>
-    
- 
+
 <?php include 'footer.php'; ?>
 
 </body>
