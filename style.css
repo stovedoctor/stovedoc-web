@@ -801,12 +801,29 @@ details.faq-drop[open] summary::after { content: ' —'; }
  /* leave this in place  */
 
 
-/* --- THE STOVE DOC MASTER REPAIR: FINAL VERSION --- */
+/* --- FINAL REPAIR: NO-FLUFF VERSION --- */
 
-/* 1. DESKTOP TRAY (MSI Laptop) */
+/* 1. THE HINT: Now visible on Desktop & Mobile */
+.grid-3[data-hint] {
+    position: relative; 
+    padding-top: 45px !important; 
+}
+.grid-3[data-hint]::before {
+    content: attr(data-hint);
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 0.75rem;
+    color: #ff9900;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 100;
+}
+
+/* 2. DESKTOP TRAY (MSI Laptop) */
 @media (min-width: 769px) {
-    /* Kill the centering 'pinch' on the parent container */
-    #spotters, .section-wrapper, .info-container {
+    /* Anchors to left so PelPro isn't 'hanging' off the left edge */
+    .section-wrapper, #spotters {
         align-items: flex-start !important; 
         display: flex !important;
         flex-direction: column !important;
@@ -815,63 +832,46 @@ details.faq-drop[open] summary::after { content: ' —'; }
     .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
-        overflow-x: auto !important;
+        overflow-x: scroll !important; /* Forces the 'pipe' open */
         width: 100% !important;
-        max-width: 1200px !important;
-        margin: 0 auto !important;
-        padding: 20px 20px 60px 20px !important; 
+        padding: 10px 20px 60px 20px !important; 
         justify-content: flex-start !important;
-        -webkit-overflow-scrolling: touch;
     }
 
-    /* THE LOCK: flex-shrink: 0 forces cards to stay 350px so they HAVE to scroll */
-    .grid-3 > div, .grid-3 .info-card, .grid-3 .box-base {
+    /* THE LOCK: Targets .case-file specifically since that's what's in your PHP */
+    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
         flex: 0 0 350px !important;
         min-width: 350px !important;
-        flex-shrink: 0 !important; 
+        flex-shrink: 0 !important; /* STOPS THE SQUISH */
         margin-right: 25px !important;
-        scroll-snap-align: start;
     }
 
     /* FORCED VISIBLE ORANGE SCROLLBAR */
-    .grid-3::-webkit-scrollbar { height: 14px !important; display: block !important; }
-    .grid-3::-webkit-scrollbar-track { background: #1a1a1a; }
+    .grid-3::-webkit-scrollbar { 
+        height: 14px !important; 
+        display: block !important; 
+        visibility: visible !important;
+    }
     .grid-3::-webkit-scrollbar-thumb { 
         background: #ff9900 !important; 
         border-radius: 10px; 
-        border: 3px solid #000;
+        border: 3px solid #000; 
     }
 }
 
-/* 2. MOBILE TRAY (Pixel 8 Pro) */
+/* 3. MOBILE TRAY (Pixel 8 Pro) */
 @media (max-width: 768px) {
-    /* Fixes 'Hanging' issue by adding a 20px gutter on the left bezel */
-    .grid-3, #checklist-grid, #spotters .grid-3 {
+    .grid-3 {
         display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
         padding-left: 20px !important; 
-        padding-right: 20px !important;
         width: 100% !important;
-        box-sizing: border-box !important;
-        justify-content: flex-start !important;
-        -webkit-overflow-scrolling: touch;
     }
-
-    /* Forces the 85% width (15% peek) on the phone */
-    .grid-3 > div, .grid-3 .info-card, .grid-3 .box-base {
+    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
         flex: 0 0 85% !important;
         min-width: 85% !important;
         flex-shrink: 0 !important;
-        width: 85% !important;
         margin-right: 15px !important;
-        scroll-snap-align: start;
     }
-
-    /* Diagnostic/FAQ gear centering */
-    .faq-drop, .case-file {
-        width: 92% !important;
-        margin: 0 auto 15px auto !important;
-    }
-
-    /* Floating Hint Text: Now with a black background to stay readable
+    /* Hide scrollbar ONLY on mobile */
+    .grid-3::-webkit-scrollbar { display: none !important; }
+}
