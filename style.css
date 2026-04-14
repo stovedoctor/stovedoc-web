@@ -800,16 +800,13 @@ details.faq-drop[open] summary::after { content: ' —'; }
     
  /* leave this in place  */
 
+/* --- STOVE DOC DEFINITIVE REPAIR: ID-SPECIFIC --- */
 
-/* --- THE STOVE DOC MASTER REPAIR: CLAMP VERSION --- */
-
-/* 1. THE HINT: Now pushed down so it doesn't overlap the header */
+/* 1. THE HINT: Locked above the tray */
 .grid-3[data-hint] {
-    position: relative; 
-    padding-top: 60px !important; 
-    margin-top: 40px !important;  /* Stops the hint from being covered by the text above */
-    max-width: 100% !important;   /* THE CLAMP: Forces the tray to stay inside the 1200px cage */
-    overflow-x: auto !important;   /* THE PIPE: Forces the scrollbar to trigger */
+    position: relative !important;
+    padding-top: 60px !important;
+    margin-top: 20px !important;
 }
 
 .grid-3[data-hint]::before {
@@ -824,47 +821,40 @@ details.faq-drop[open] summary::after { content: ' —'; }
     z-index: 100;
 }
 
-/* 2. DESKTOP TRAY (MSI Laptop) */
+/* 2. DESKTOP TRAY (MSI Laptop) - Forces the Scroll */
 @media (min-width: 769px) {
-    /* UN-CENTERING: Anchors the row to the left bezel */
-    .section-wrapper, .info-container, .video-library-section {
-        align-items: flex-start !important; 
-    }
-
-    .grid-3 {
+    #checklist-grid, .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
+        overflow-x: auto !important;
         width: 100% !important;
-        padding: 10px 20px 60px 20px !important; 
-        justify-content: flex-start !important; 
+        justify-content: flex-start !important;
+        padding: 10px 20px 60px 20px !important;
     }
 
-    /* THE LOCK: Targets .case-file specifically since that's your card class */
-    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
+    /* THE TRIPLE LOCK: Prevents the squish shown in your screenshot */
+    #checklist-grid > div, .grid-3 > div, .grid-3 .info-card {
         flex: 0 0 350px !important;
         min-width: 350px !important;
-        flex-shrink: 0 !important; /* STOPS THE SQUISH */
+        width: 350px !important;
+        flex-shrink: 0 !important; /* Forces the overflow scroll */
         margin-right: 25px !important;
     }
 
-    /* FORCED VISIBLE ORANGE SCROLLBAR */
-    .grid-3::-webkit-scrollbar { height: 16px !important; display: block !important; }
-    .grid-3::-webkit-scrollbar-track { background: #000; }
-    .grid-3::-webkit-scrollbar-thumb { 
-        background: #ff9900 !important; 
-        border-radius: 10px; 
-        border: 4px solid #000;
-    }
+    /* VISIBLE SCROLLBAR */
+    .grid-3::-webkit-scrollbar { height: 14px !important; display: block !important; }
+    .grid-3::-webkit-scrollbar-thumb { background: #ff9900 !important; border-radius: 10px; }
 }
 
-/* 3. MOBILE TRAY (Pixel 8 Pro) */
+/* 3. MOBILE TRAY (Pixel 8 Pro) - Fixes Hanging Edges */
 @media (max-width: 768px) {
-    .grid-3 {
+    #checklist-grid, .grid-3 {
         display: flex !important;
-        padding-left: 20px !important; 
+        padding-left: 20px !important; /* Pushes card away from bezel */
         width: 100% !important;
     }
-    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
+    
+    #checklist-grid > div, .grid-3 > div, .grid-3 .info-card {
         flex: 0 0 85% !important;
         min-width: 85% !important;
         flex-shrink: 0 !important;
