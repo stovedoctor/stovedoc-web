@@ -81,16 +81,12 @@
     <p><strong>SYMPTOM:</strong> Status light blinks 3 times and the stove shuts down.</p>
     <p><strong>THE REALITY:</strong> Your ESP probe is "blind." I’ll help you use your digital meter to verify if the sensor is actually dead or just lying to the board.</p>
 </div>
-    </div>
-
- <div id="more-spotters" style="display: none; width: 100%;">
-    <div class="grid-3" data-hint="Swipe to view Symptoms ➔" style="margin-top: 20px;">
-        
+ 
         <div class="case-file look-smoky">
             <h3 style="text-transform:uppercase; color:var(--flame);">LOPI / AVALON</h3>
             <p><strong>SYMPTOM:</strong> Stove runs for 15-20 minutes, then goes cold for no reason.</p>
             <p><strong>THE REALITY:</strong> The "Proof of Fire" signal is flatlining. We’ll pull the meter out and check the resistance to find the exact break in the circuit.</p>
-        </div>S
+        </div>
 
         <div class="case-file look-smoky">
             <h3 style="text-transform:uppercase; color:var(--flame);">QUADRA-FIRE</h3>
@@ -112,9 +108,7 @@
 
     </div>
 </div>
-    <div style="margin-top: 20px; text-align: center;">
-        <a href="javascript:void(0)" id="more-link" onclick="toggleSpotters()" style="color: var(--flame); font-weight: 900; text-transform: uppercase; text-decoration: none; border-bottom: 2px solid var(--flame); letter-spacing: 1px;">+ VIEW MORE SPOTTERS</a>
-    </div>
+  
 
     <div style="margin-top: 40px;">
         <a href="telehearth_booking.php" class="cta-btn">BOOK A $75 DIAGNOSIS NOW</a>
