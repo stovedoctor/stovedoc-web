@@ -211,24 +211,30 @@ nav {
 
 .faq-accordion { width: 100%; max-width: 850px; margin: 0 auto; }
 
-/* --- UNIVERSAL TRAY (Desktop & Default) --- */
+/* --- Desktop Tray (Global/Default) --- */
 .grid-3 {
     display: flex !important;
     flex-wrap: nowrap !important; 
     overflow-x: auto !important;
     gap: 20px !important;
-    padding: 10px 0 25px 0 !important;
+    padding: 20px 0 !important;
     justify-content: flex-start !important;
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch;
 }
 
-/* DESKTOP CARD SIZE */
+/* DESKTOP CARDS: Locks them at 350px so they don't shrink */
 .grid-3 > div, .grid-3 .box-base, .grid-3 .info-card {
-    flex: 0 0 350px !important; 
+    flex: 0 0 350px !important;
     min-width: 350px !important;
     scroll-snap-align: start;
 }
+
+/* CUSTOM SCROLLBAR: Makes it obvious on desktop */
+.grid-3::-webkit-scrollbar { height: 8px; display: block !important; }
+.grid-3::-webkit-scrollbar-thumb { background: #ff9900; border-radius: 10px; }
+
+
 .info-card { 
     background: rgba(0, 0, 0, 0.9) !important;
     padding: 30px; 
@@ -683,21 +689,24 @@ details.faq-drop[open] summary::after { content: ' —'; }
         margin-bottom: 0 !important; 
     }
 
-    /* THE HINT BOX: Updated with STICKY logic to keep it visible */
+/* Mobile Tray Header: Adds room at the top for the hint */
+    .grid-3[data-hint] {
+        position: relative; 
+        padding-top: 35px !important; 
+    }
+
+    /* THE HINT: Pins it to the top right so it won't slide away */
     .grid-3[data-hint]::before {
         content: attr(data-hint);
-        display: block;
-        position: sticky; /* Keeps it from sliding off-screen */
-        left: 0; 
-        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 15px;
         font-size: 0.75rem;
-        color: #ff9900; 
+        color: #ff9900;
         text-transform: uppercase;
         font-weight: bold;
-        text-align: right;
-        margin-bottom: 10px;
-        padding-right: 15px;
         z-index: 10;
+        white-space: nowrap;
     }
     .info-card { 
         width: 100% !important; 
