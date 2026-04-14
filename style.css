@@ -801,17 +801,17 @@ details.faq-drop[open] summary::after { content: ' —'; }
  /* leave this in place  */
 
 
-/* --- FINAL REPAIR: NO-FLUFF VERSION --- */
+/* --- THE STOVE DOC MASTER REPAIR: CLAMP VERSION --- */
 
-/* --- THE STOVE DOC MASTER REPAIR: FINAL VERSION --- */
-
-/* 1. THE HINT (Desktop & Mobile) */
+/* 1. THE HINT: Now pushed down so it doesn't overlap the header */
 .grid-3[data-hint] {
     position: relative; 
-    padding-top: 60px !important; /* Lowered this to stop the "Hero Overlap" */
-    margin-top: 20px !important;  /* Adds breathing room below the video/header */
-    z-index: 10;
+    padding-top: 60px !important; 
+    margin-top: 40px !important;  /* Stops the hint from being covered by the text above */
+    max-width: 100% !important;   /* THE CLAMP: Forces the tray to stay inside the 1200px cage */
+    overflow-x: auto !important;   /* THE PIPE: Forces the scrollbar to trigger */
 }
+
 .grid-3[data-hint]::before {
     content: attr(data-hint);
     position: absolute;
@@ -826,31 +826,28 @@ details.faq-drop[open] summary::after { content: ' —'; }
 
 /* 2. DESKTOP TRAY (MSI Laptop) */
 @media (min-width: 769px) {
-    /* STOPS THE CENTERING CLIP: Forces the tray to start at the left edge */
-    #spotters, .section-wrapper, .info-container, .video-library-section {
+    /* UN-CENTERING: Anchors the row to the left bezel */
+    .section-wrapper, .info-container, .video-library-section {
         align-items: flex-start !important; 
-        display: flex !important;
-        flex-direction: column !important;
     }
 
     .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
-        overflow-x: auto !important; /* THE SCROLL PIPE */
         width: 100% !important;
         padding: 10px 20px 60px 20px !important; 
-        justify-content: flex-start !important; /* ANCHORS PELPRO TO THE LEFT */
+        justify-content: flex-start !important; 
     }
 
-    /* THE LOCK: Targets .case-file specifically so they stay 350px */
-    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card, .grid-3 .box-base {
+    /* THE LOCK: Targets .case-file specifically since that's your card class */
+    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
         flex: 0 0 350px !important;
         min-width: 350px !important;
         flex-shrink: 0 !important; /* STOPS THE SQUISH */
         margin-right: 25px !important;
     }
 
-    /* FORCED ORANGE SCROLLBAR: This will stay visible on full screen now */
+    /* FORCED VISIBLE ORANGE SCROLLBAR */
     .grid-3::-webkit-scrollbar { height: 16px !important; display: block !important; }
     .grid-3::-webkit-scrollbar-track { background: #000; }
     .grid-3::-webkit-scrollbar-thumb { 
@@ -866,10 +863,8 @@ details.faq-drop[open] summary::after { content: ' —'; }
         display: flex !important;
         padding-left: 20px !important; 
         width: 100% !important;
-        justify-content: flex-start !important;
     }
-
-    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card, .grid-3 .box-base {
+    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
         flex: 0 0 85% !important;
         min-width: 85% !important;
         flex-shrink: 0 !important;
