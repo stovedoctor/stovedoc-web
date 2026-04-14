@@ -1,0 +1,29 @@
+DirectoryIndex index.php index.html
+
+# No Loitering (Hide directory listings)
+Options -Indexes
+
+# Turbocharger (Gzip compression)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+</IfModule>
+
+# --- BEGIN REWRITE LOGIC ---
+RewriteEngine On
+
+# The Master Anchor: Forces all logic to stay inside the /beta/ folder
+RewriteBase /beta/
+
+# Security Guard (Force HTTPS)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Portable Re-piping (HTML to PHP)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)\.html$ $1.php [L,R=301]
+
+# The "Manual U-Turn" (The 404 bypass)
+# If the file doesn't exist AND the folder doesn't exist, serve 404.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ 404.php [L]
