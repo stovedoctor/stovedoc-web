@@ -669,6 +669,19 @@ details.faq-drop[open] summary::after { content: ' —'; }
         scroll-snap-align: start;
         margin-bottom: 0 !important; 
     }
+    /* The Hint Box */
+    .grid-3[data-hint]::before {
+        content: attr(data-hint);
+        display: block;
+        width: 100%;
+        font-size: 0.75rem;
+        color: #ff9900; /* Your brand orange */
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: right;
+        margin-bottom: 5px;
+        padding-right: 15px;
+    }
     .info-card { 
         width: 100% !important; 
         margin-bottom: 0 !important; 
