@@ -801,57 +801,77 @@ details.faq-drop[open] summary::after { content: ' —'; }
  /* leave this in place  */
 
 
-/* --- STOVE DOC FINAL MASTER REPAIR --- */
+/* --- THE STOVE DOC MASTER REPAIR: FINAL VERSION --- */
 
-/* 1. Global Tray Fix (Desktop & Laptop) */
+/* 1. DESKTOP TRAY (MSI Laptop) */
 @media (min-width: 769px) {
+    /* Kill the centering 'pinch' on the parent container */
+    #spotters, .section-wrapper, .info-container {
+        align-items: flex-start !important; 
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
     .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
-        width: 100vw !important; /* Forces it to see the full width */
+        width: 100% !important;
         max-width: 1200px !important;
         margin: 0 auto !important;
-        padding: 20px 20px 50px 20px !important; /* Extra bottom space for scrollbar */
+        padding: 20px 20px 60px 20px !important; 
         justify-content: flex-start !important;
         -webkit-overflow-scrolling: touch;
     }
 
-    /* THE NO-SQUISH RULE: Prevents desktop browsers from shrinking cards */
+    /* THE LOCK: flex-shrink: 0 forces cards to stay 350px so they HAVE to scroll */
     .grid-3 > div, .grid-3 .info-card, .grid-3 .box-base {
         flex: 0 0 350px !important;
         min-width: 350px !important;
         flex-shrink: 0 !important; 
         margin-right: 25px !important;
+        scroll-snap-align: start;
     }
 
-    /* Force Orange Scrollbar Visibility */
-    .grid-3::-webkit-scrollbar { height: 12px !important; display: block !important; }
-    .grid-3::-webkit-scrollbar-thumb { background: #ff9900 !important; border-radius: 10px; border: 3px solid #000; }
+    /* FORCED VISIBLE ORANGE SCROLLBAR */
+    .grid-3::-webkit-scrollbar { height: 14px !important; display: block !important; }
+    .grid-3::-webkit-scrollbar-track { background: #1a1a1a; }
+    .grid-3::-webkit-scrollbar-thumb { 
+        background: #ff9900 !important; 
+        border-radius: 10px; 
+        border: 3px solid #000;
+    }
 }
 
-/* 2. Mobile Edge & Peek Fix (Pixel 8) */
+/* 2. MOBILE TRAY (Pixel 8 Pro) */
 @media (max-width: 768px) {
-    .grid-3, #checklist-grid {
+    /* Fixes 'Hanging' issue by adding a 20px gutter on the left bezel */
+    .grid-3, #checklist-grid, #spotters .grid-3 {
         display: flex !important;
-        width: 100% !important;
-        padding-left: 20px !important; /* Pushes cards away from the screen edge */
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        padding-left: 20px !important; 
         padding-right: 20px !important;
+        width: 100% !important;
         box-sizing: border-box !important;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch;
     }
 
+    /* Forces the 85% width (15% peek) on the phone */
     .grid-3 > div, .grid-3 .info-card, .grid-3 .box-base {
         flex: 0 0 85% !important;
         min-width: 85% !important;
         flex-shrink: 0 !important;
+        width: 85% !important;
         margin-right: 15px !important;
+        scroll-snap-align: start;
     }
 
-    /* Floating Hint Re-alignment */
-    .grid-3[data-hint]::before {
-        right: 25px !important;
-        top: -10px !important;
-        background: #000; /* Adds a solid back to the text so it doesn't blur with lines */
-        padding: 2px 8px;
+    /* Diagnostic/FAQ gear centering */
+    .faq-drop, .case-file {
+        width: 92% !important;
+        margin: 0 auto 15px auto !important;
     }
-}
+
+    /* Floating Hint Text: Now with a black background to stay readable
