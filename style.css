@@ -211,11 +211,24 @@ nav {
 
 .faq-accordion { width: 100%; max-width: 850px; margin: 0 auto; }
 
-.grid-3 { 
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 20px; width: 100%; justify-content: center; margin: 0 auto;
+/* --- UNIVERSAL TRAY (Desktop & Default) --- */
+.grid-3 {
+    display: flex !important;
+    flex-wrap: nowrap !important; 
+    overflow-x: auto !important;
+    gap: 20px !important;
+    padding: 10px 0 25px 0 !important;
+    justify-content: flex-start !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
 }
 
+/* DESKTOP CARD SIZE */
+.grid-3 > div, .grid-3 .box-base, .grid-3 .info-card {
+    flex: 0 0 350px !important; 
+    min-width: 350px !important;
+    scroll-snap-align: start;
+}
 .info-card { 
     background: rgba(0, 0, 0, 0.9) !important;
     padding: 30px; 
@@ -655,32 +668,36 @@ details.faq-drop[open] summary::after { content: ' —'; }
         gap: 15px !important; 
         padding: 10px 15px 25px 15px !important; 
         -webkit-overflow-scrolling: touch;
-        justify-content: flex-start !important; /* Forces alignment to the left */
+        justify-content: flex-start !important; 
     }
 
     .grid-3::-webkit-scrollbar { display: none; }
 
-    /* THE UNIVERSAL PEEK: This hits EVERYTHING inside a grid-3 */
+    /* THE UNIVERSAL PEEK: Sets cards to 85% width */
     .grid-3 > div, 
     .grid-3 .box-base, 
     .grid-3 .info-card {
         flex: 0 0 85% !important; 
-        min-width: 85% !important; /* Hard-lock the width so it CANNOT squish */
+        min-width: 85% !important; 
         scroll-snap-align: start;
         margin-bottom: 0 !important; 
     }
-    /* The Hint Box */
+
+    /* THE HINT BOX: Updated with STICKY logic to keep it visible */
     .grid-3[data-hint]::before {
         content: attr(data-hint);
         display: block;
+        position: sticky; /* Keeps it from sliding off-screen */
+        left: 0; 
         width: 100%;
         font-size: 0.75rem;
-        color: #ff9900; /* Your brand orange */
+        color: #ff9900; 
         text-transform: uppercase;
         font-weight: bold;
         text-align: right;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         padding-right: 15px;
+        z-index: 10;
     }
     .info-card { 
         width: 100% !important; 
