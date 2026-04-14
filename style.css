@@ -646,7 +646,7 @@ details.faq-drop[open] summary::after { content: ' —'; }
         margin-top: 10px !important;
     }
 
- /* THE TRAY: Forces info cards into one horizontal row */
+ /* THE TRAY: Forces horizontal flow and fixes the "Left Scroll" bug */
     .grid-3 { 
         display: flex !important; 
         flex-wrap: nowrap !important; 
@@ -655,17 +655,20 @@ details.faq-drop[open] summary::after { content: ' —'; }
         gap: 15px !important; 
         padding: 10px 15px 25px 15px !important; 
         -webkit-overflow-scrolling: touch;
+        justify-content: flex-start !important; /* Forces alignment to the left */
     }
 
-    /* Hides the ugly scrollbar on the tray */
     .grid-3::-webkit-scrollbar { display: none; }
-    
-    .grid-3 .box-base, .grid-3 .info-card {
+
+    /* THE UNIVERSAL PEEK: This hits EVERYTHING inside a grid-3 */
+    .grid-3 > div, 
+    .grid-3 .box-base, 
+    .grid-3 .info-card {
         flex: 0 0 85% !important; 
+        min-width: 85% !important; /* Hard-lock the width so it CANNOT squish */
         scroll-snap-align: start;
         margin-bottom: 0 !important; 
     }
-
     .info-card { 
         width: 100% !important; 
         margin-bottom: 0 !important; 
