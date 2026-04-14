@@ -659,6 +659,12 @@ details.faq-drop[open] summary::after { content: ' —'; }
 
     /* Hides the ugly scrollbar on the tray */
     .grid-3::-webkit-scrollbar { display: none; }
+    
+    .grid-3 .box-base, .grid-3 .info-card {
+        flex: 0 0 85% !important; 
+        scroll-snap-align: start;
+        margin-bottom: 0 !important; 
+    }
 
     .info-card { 
         width: 100% !important; 
