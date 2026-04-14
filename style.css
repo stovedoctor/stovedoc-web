@@ -803,15 +803,17 @@ details.faq-drop[open] summary::after { content: ' —'; }
 
 /* --- FINAL REPAIR: NO-FLUFF VERSION --- */
 
-/* 1. THE HINT: Now visible on Desktop & Mobile */
+/* --- THE STOVE DOC MASTER REPAIR: FINAL VERSION --- */
+
+/* 1. THE HINT (Desktop & Mobile) */
 .grid-3[data-hint] {
     position: relative; 
-    padding-top: 45px !important; 
+    padding-top: 50px !important; /* Shelf for the orange hint */
 }
 .grid-3[data-hint]::before {
     content: attr(data-hint);
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 25px;
     font-size: 0.75rem;
     color: #ff9900;
@@ -822,8 +824,8 @@ details.faq-drop[open] summary::after { content: ' —'; }
 
 /* 2. DESKTOP TRAY (MSI Laptop) */
 @media (min-width: 769px) {
-    /* Anchors to left so PelPro isn't 'hanging' off the left edge */
-    .section-wrapper, #spotters {
+    /* Forces the 'Harman' card to stay on the screen so you can scroll RIGHT */
+    #spotters, .section-wrapper, .info-container {
         align-items: flex-start !important; 
         display: flex !important;
         flex-direction: column !important;
@@ -832,30 +834,27 @@ details.faq-drop[open] summary::after { content: ' —'; }
     .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
-        overflow-x: scroll !important; /* Forces the 'pipe' open */
+        overflow-x: auto !important; /* The "Scroll Pipe" */
         width: 100% !important;
         padding: 10px 20px 60px 20px !important; 
-        justify-content: flex-start !important;
+        justify-content: flex-start !important; /* Anchors the start of the row to the left */
     }
 
-    /* THE LOCK: Targets .case-file specifically since that's what's in your PHP */
-    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
+    /* THE LOCK: We added .case-file here so it actually grabs your PHP cards */
+    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card, .grid-3 .box-base {
         flex: 0 0 350px !important;
         min-width: 350px !important;
-        flex-shrink: 0 !important; /* STOPS THE SQUISH */
+        flex-shrink: 0 !important; /* NO SQUISH ZONE */
         margin-right: 25px !important;
     }
 
-    /* FORCED VISIBLE ORANGE SCROLLBAR */
-    .grid-3::-webkit-scrollbar { 
-        height: 14px !important; 
-        display: block !important; 
-        visibility: visible !important;
-    }
+    /* FORCED ORANGE SCROLLBAR: Overrides any 'hide scroll' ghosts */
+    .grid-3::-webkit-scrollbar { height: 14px !important; display: block !important; }
+    .grid-3::-webkit-scrollbar-track { background: #1a1a1a; }
     .grid-3::-webkit-scrollbar-thumb { 
         background: #ff9900 !important; 
         border-radius: 10px; 
-        border: 3px solid #000; 
+        border: 3px solid #000;
     }
 }
 
@@ -865,13 +864,20 @@ details.faq-drop[open] summary::after { content: ' —'; }
         display: flex !important;
         padding-left: 20px !important; 
         width: 100% !important;
+        justify-content: flex-start !important;
     }
-    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
+
+    /* Forces the 85% width (15% peek) on the phone */
+    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card, .grid-3 .box-base {
         flex: 0 0 85% !important;
         min-width: 85% !important;
         flex-shrink: 0 !important;
         margin-right: 15px !important;
     }
-    /* Hide scrollbar ONLY on mobile */
-    .grid-3::-webkit-scrollbar { display: none !important; }
+
+    /* Centers the Gear/FAQ items */
+    .faq-drop, .case-file:not(.grid-3 .case-file) {
+        width: 92% !important;
+        margin: 0 auto 15px auto !important;
+    }
 }
