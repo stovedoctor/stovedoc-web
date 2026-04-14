@@ -805,67 +805,58 @@ details.faq-drop[open] summary::after { content: ' —'; }
 
 /* --- THE STOVE DOC MASTER REPAIR: FINAL VERSION --- */
 
-/* --- THE STOVE DOC MASTER REPAIR: FINAL VERSION --- */
-
-/* 1. THE HINT (Desktop & Mobile): Now STICKY so it stays on screen */
+/* 1. THE HINT (Desktop & Mobile) */
 .grid-3[data-hint] {
     position: relative; 
-    padding-top: 50px !important; 
+    padding-top: 60px !important; /* Lowered this to stop the "Hero Overlap" */
+    margin-top: 20px !important;  /* Adds breathing room below the video/header */
+    z-index: 10;
 }
 .grid-3[data-hint]::before {
     content: attr(data-hint);
-    position: -webkit-sticky;
-    position: sticky;
-    left: 0; 
-    top: 10px;
-    width: 100%;
-    display: block;
-    text-align: right;
-    padding-right: 25px;
+    position: absolute;
+    top: 20px;
+    right: 25px;
     font-size: 0.75rem;
     color: #ff9900;
     text-transform: uppercase;
     font-weight: bold;
     z-index: 100;
-    pointer-events: none; /* Allows clicking through the text to the cards */
 }
 
 /* 2. DESKTOP TRAY (MSI Laptop) */
 @media (min-width: 769px) {
-    /* Unlocks the container so PelPro isn't clipped on the left */
-    .section-wrapper, .info-container, #spotters {
+    /* STOPS THE CENTERING CLIP: Forces the tray to start at the left edge */
+    #spotters, .section-wrapper, .info-container, .video-library-section {
         align-items: flex-start !important; 
         display: flex !important;
         flex-direction: column !important;
-        overflow: visible !important;
     }
 
     .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
-        overflow-x: auto !important; /* Forces the horizontal scroll */
+        overflow-x: auto !important; /* THE SCROLL PIPE */
         width: 100% !important;
-        max-width: 1200px !important; /* Keeps it within your site's main column */
-        padding: 10px 0 60px 0 !important; 
-        justify-content: flex-start !important;
+        padding: 10px 20px 60px 20px !important; 
+        justify-content: flex-start !important; /* ANCHORS PELPRO TO THE LEFT */
     }
 
-    /* THE LOCK: Targets .case-file specifically to stop the 'Squish' */
-    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
+    /* THE LOCK: Targets .case-file specifically so they stay 350px */
+    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card, .grid-3 .box-base {
         flex: 0 0 350px !important;
         min-width: 350px !important;
-        flex-shrink: 0 !important; 
+        flex-shrink: 0 !important; /* STOPS THE SQUISH */
         margin-right: 25px !important;
-        scroll-snap-align: start;
     }
 
-    /* FORCED VISIBLE ORANGE SCROLLBAR */
-    .grid-3::-webkit-scrollbar { height: 14px !important; display: block !important; }
-    .grid-3::-webkit-scrollbar-track { background: #1a1a1a; }
+    /* FORCED ORANGE SCROLLBAR: This will stay visible on full screen now */
+    .grid-3::-webkit-scrollbar { height: 16px !important; display: block !important; }
+    .grid-3::-webkit-scrollbar-track { background: #000; }
     .grid-3::-webkit-scrollbar-thumb { 
         background: #ff9900 !important; 
         border-radius: 10px; 
-        border: 3px solid #000;
+        border: 4px solid #000;
     }
 }
 
@@ -875,18 +866,13 @@ details.faq-drop[open] summary::after { content: ' —'; }
         display: flex !important;
         padding-left: 20px !important; 
         width: 100% !important;
+        justify-content: flex-start !important;
     }
 
-    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card {
+    .grid-3 > div, .grid-3 .case-file, .grid-3 .info-card, .grid-3 .box-base {
         flex: 0 0 85% !important;
         min-width: 85% !important;
         flex-shrink: 0 !important;
         margin-right: 15px !important;
-    }
-
-    /* Centers the Gear/FAQ items */
-    .faq-drop, .case-file:not(.grid-3 .case-file) {
-        width: 92% !important;
-        margin: 0 auto 15px auto !important;
     }
 }
