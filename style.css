@@ -798,4 +798,60 @@ details.faq-drop[open] summary::after { content: ' —'; }
 .hero-tools { background-image: url('tooltray-mb.webp') !important; }
 .hero-clinic { background-image: url('telehearth-mb.webp') !important; }
     
-} /* leave this in place  */
+ /* leave this in place  */
+
+
+/* --- THE STOVE DOC MASTER REPAIR BLOCK --- */
+
+/* 1. Desktop Fix: Forces the scrollbar and stops the "squish" on your MSI */
+@media (min-width: 769px) {
+    .grid-3 {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        padding: 20px !important;
+    }
+    .grid-3 > div, .grid-3 .info-card, .grid-3 .box-base {
+        flex: 0 0 350px !important;
+        min-width: 350px !important;
+        margin-right: 20px !important;
+    }
+}
+
+/* 2. Mobile Fix: Fixes the hanging edges and brings back the 85% peek */
+@media (max-width: 768px) {
+    /* Anchors the tray and adds a "buffer" so cards don't hit the screen edge */
+    .grid-3, #checklist-grid {
+        display: flex !important;
+        padding-left: 20px !important; 
+        padding-right: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Overrides the "100% width" killer and forces the 85% peek */
+    .grid-3 > div, 
+    .grid-3 .info-card, 
+    .grid-3 .box-base,
+    .grid-3 .credential-card {
+        flex: 0 0 85% !important;
+        min-width: 85% !important;
+        width: 85% !important;
+        margin-right: 15px !important;
+        scroll-snap-align: start;
+    }
+
+    /* Fixes the "Hanging Gear" on FAQ/Diagnostic pages */
+    .faq-drop, .case-file {
+        width: 92% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Re-aligns the hint so it matches the new padding */
+    .grid-3[data-hint]::before {
+        right: 25px !important;
+        top: -5px !important;
+    }
+}
