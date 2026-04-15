@@ -800,64 +800,52 @@ details.faq-drop[open] summary::after { content: ' —'; }
     
  /* leave this in place  */
 
-/* --- STOVE DOC DEFINITIVE REPAIR: ID-SPECIFIC --- */
+/* --- FINAL ID-SPECIFIC REPAIR --- */
 
-/* 1. THE HINT: Locked above the tray */
-.grid-3[data-hint] {
-    position: relative !important;
-    padding-top: 60px !important;
-    margin-top: 20px !important;
-}
-
-.grid-3[data-hint]::before {
-    content: attr(data-hint);
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 0.75rem;
-    color: #ff9900;
-    text-transform: uppercase;
-    font-weight: bold;
-    z-index: 100;
-}
-
-/* 2. DESKTOP TRAY (MSI Laptop) - Forces the Scroll */
+/* 1. DESKTOP: Stops the "Pancake" squish and forces the scroll */
 @media (min-width: 769px) {
     #checklist-grid, .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
-        width: 100% !important;
         justify-content: flex-start !important;
-        padding: 10px 20px 60px 20px !important;
+        padding: 20px 20px 60px 20px !important;
     }
 
-    /* THE TRIPLE LOCK: Prevents the squish shown in your screenshot */
-    #checklist-grid > div, .grid-3 > div, .grid-3 .info-card {
+    /* THE LOCK: Using the ID to force the 350px width */
+    #checklist-grid > div, 
+    #checklist-grid .info-card,
+    .grid-3 > div {
         flex: 0 0 350px !important;
         min-width: 350px !important;
         width: 350px !important;
-        flex-shrink: 0 !important; /* Forces the overflow scroll */
+        flex-shrink: 0 !important; /* THE KILLER: Stops them from squishing */
         margin-right: 25px !important;
     }
 
-    /* VISIBLE SCROLLBAR */
-    .grid-3::-webkit-scrollbar { height: 14px !important; display: block !important; }
-    .grid-3::-webkit-scrollbar-thumb { background: #ff9900 !important; border-radius: 10px; }
+    /* Forced Orange Scrollbar for Windows */
+    #checklist-grid::-webkit-scrollbar, .grid-3::-webkit-scrollbar { 
+        height: 12px !important; 
+        display: block !important; 
+    }
+    #checklist-grid::-webkit-scrollbar-thumb, .grid-3::-webkit-scrollbar-thumb { 
+        background: #ff9900 !important; 
+        border-radius: 10px; 
+    }
 }
 
-/* 3. MOBILE TRAY (Pixel 8 Pro) - Fixes Hanging Edges */
+/* 2. MOBILE: Fixes the Hanging Edge and Peek */
 @media (max-width: 768px) {
     #checklist-grid, .grid-3 {
-        display: flex !important;
-        padding-left: 20px !important; /* Pushes card away from bezel */
-        width: 100% !important;
+        padding-left: 20px !important; /* Pushes Harman card away from the screen bezel */
+        padding-right: 20px !important;
     }
-    
-    #checklist-grid > div, .grid-3 > div, .grid-3 .info-card {
-        flex: 0 0 85% !important;
+
+    #checklist-grid > div, 
+    #checklist-grid .info-card,
+    .grid-3 > div {
+        flex: 0 0 85% !important; /* Forces the 15% peek on the right */
         min-width: 85% !important;
         flex-shrink: 0 !important;
-        margin-right: 15px !important;
     }
 }
