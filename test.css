@@ -1,0 +1,26 @@
+.tray-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding: 40px 20px;
+    background: #111;
+    width: 100%;
+}
+
+.test-card {
+    flex: 0 0 350px !important; /* THE LOCK */
+    min-width: 350px !important;
+    height: 200px;
+    background: #222;
+    border: 2px solid #ff9900;
+    margin-right: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+/* Force the scrollbar visible */
+.tray-container::-webkit-scrollbar { height: 12px; display: block; }
+.tray-container::-webkit-scrollbar-thumb { background: #ff9900; border-radius: 10px; }
