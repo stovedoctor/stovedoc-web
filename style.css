@@ -800,50 +800,46 @@ details.faq-drop[open] summary::after { content: ' —'; }
     
  /* leave this in place  */
 
-/* --- THE CLEAN ROOM REBUILD (Based on test.css) --- */
+/* --- THE STOVE DOC: FINAL CHASSIS ALIGNMENT --- */
 
+/* 1. DESKTOP: Breaking the 'Straightjacket' */
 @media (min-width: 769px) {
-    /* Force the parent container to stop 'pinching' the tray into the center */
-    .section-wrapper, .info-container {
-        align-items: flex-start !important;
+    /* Forces the parent to stop pinching the tray into the center */
+    #spotters.section-wrapper {
+        align-items: stretch !important;
+        display: block !important; 
     }
 
-    #checklist-grid, .grid-3 {
+    #checklist-grid.grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important; /* THE PIPE: Forces the scrollbar */
         width: 100% !important;
-        justify-content: flex-start !important;
-        padding: 20px 20px 60px 20px !important;
+        padding: 20px 0 60px 0 !important;
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* THE LOCK: Stops the 'Pancake' squish from your screenshots */
-    #checklist-grid > div, .grid-3 > div, .grid-3 .info-card {
+    /* THE LOCK: Same as your working test.css */
+    #checklist-grid > div, #checklist-grid .case-file {
         flex: 0 0 350px !important;
         min-width: 350px !important;
-        flex-shrink: 0 !important; /* THE MOST IMPORTANT LINE */
+        flex-shrink: 0 !important; /* STOPS THE PANCAKE SQUISH */
         margin-right: 25px !important;
     }
 
-    /* Forced Orange Scrollbar for Desktop */
-    #checklist-grid::-webkit-scrollbar, .grid-3::-webkit-scrollbar { 
-        height: 12px !important; 
-        display: block !important; 
-    }
-    #checklist-grid::-webkit-scrollbar-thumb, .grid-3::-webkit-scrollbar-thumb { 
-        background: #ff9900 !important; 
-        border-radius: 10px; 
-    }
+    /* FORCED ORANGE SCROLLBAR (MSI Laptop) */
+    #checklist-grid::-webkit-scrollbar { height: 12px !important; display: block !important; }
+    #checklist-grid::-webkit-scrollbar-thumb { background: #ff9900 !important; border-radius: 10px; }
 }
 
-/* MOBILE: Fixes hanging edge and forces peek */
+/* 2. MOBILE: Fixes the hanging edge and forces the 85% peek */
 @media (max-width: 768px) {
-    #checklist-grid, .grid-3 {
+    #checklist-grid.grid-3 {
         display: flex !important;
         padding-left: 20px !important; 
         width: 100% !important;
     }
-    #checklist-grid > div, .grid-3 > div {
+    #checklist-grid > div, #checklist-grid .case-file {
         flex: 0 0 85% !important;
         min-width: 85% !important;
         flex-shrink: 0 !important;
