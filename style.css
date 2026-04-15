@@ -802,14 +802,14 @@ details.faq-drop[open] summary::after { content: ' —'; }
 
 /* --- STOVE DOC: FINAL BENCH REBUILD --- */
 
-/* 1. BREAK THE STRAIGHTJACKET: Un-centers the parent section */
+/* 1. THE PARENT: Breaking the 'Straightjacket' */
 #spotters.section-wrapper {
-    display: block !important;
-    align-items: stretch !important; /* Stops the centering clamp */
-    max-width: 100% !important;     /* Let it span the width */
+    display: block !important;       /* Kills the flex-centering conflict */
+    align-items: stretch !important; 
+    max-width: 100% !important;     
     margin: 0 auto !important;
     padding: 20px 0 !important;
-    position: relative;             /* Anchor for your arrows */
+    position: relative;             /* Anchor for the arrows */
 }
 
 /* 2. THE TRAY: Forces the horizontal scroll engine to run */
@@ -818,12 +818,12 @@ details.faq-drop[open] summary::after { content: ' —'; }
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
     width: 100% !important;
-    padding: 20px 20px 60px 20px !important; /* Gutter + Scrollbar space */
+    padding: 20px 20px 60px 20px !important; 
     justify-content: flex-start !important;
     -webkit-overflow-scrolling: touch;
 }
 
-/* 3. THE CARDS: No-Squish, No-Stretch Lock */
+/* 3. THE CARDS: No-Squish Lock */
 /* Desktop (MSI Laptop) */
 @media (min-width: 769px) {
     #checklist-grid > div, 
@@ -832,7 +832,7 @@ details.faq-drop[open] summary::after { content: ' —'; }
         flex: 0 0 350px !important;
         min-width: 350px !important;
         width: 350px !important;
-        flex-shrink: 0 !important; /* STOPS THE SQUISH */
+        flex-shrink: 0 !important; /* THE MOST IMPORTANT LINE */
         margin-right: 25px !important;
     }
 
@@ -847,7 +847,7 @@ details.faq-drop[open] summary::after { content: ' —'; }
         transform: translateY(-50%);
         font-size: 3rem;
         font-weight: 900;
-        color: rgba(255, 102, 0, 0.2); /* Dimmed until hover */
+        color: rgba(255, 102, 0, 0.2); 
         z-index: 100;
         pointer-events: none;
         transition: color 0.3s ease;
@@ -857,12 +857,12 @@ details.faq-drop[open] summary::after { content: ' —'; }
     #spotters:hover::before, #spotters:hover::after { color: #ff6600; }
 }
 
-/* Mobile/Small Screen (Pixel 8) */
+/* Mobile (Pixel 8) */
 @media (max-width: 768px) {
     #checklist-grid > div, 
     #checklist-grid .case-file, 
     #checklist-grid .info-card {
-        flex: 0 0 85% !important; /* FORCES THE 15% PEEK */
+        flex: 0 0 85% !important; /* Forces the 15% peek */
         min-width: 85% !important;
         width: 85% !important;
         flex-shrink: 0 !important;
