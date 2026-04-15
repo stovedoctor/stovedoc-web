@@ -800,37 +800,36 @@ details.faq-drop[open] summary::after { content: ' —'; }
     
  /* leave this in place  */
 
-/* --- THE STOVE DOC: MASTER CHASSIS REBUILD --- */
+/* --- STOVE DOC: FINAL BENCH REBUILD --- */
 
-/* 1. BREAK THE CAGE: Stops the parent from centering or pinching the tray */
+/* 1. BREAK THE STRAIGHTJACKET: Un-centers the parent section */
 #spotters.section-wrapper {
     display: block !important;
-    align-items: stretch !important;
-    max-width: 1200px !important;
+    align-items: stretch !important; /* Stops the centering clamp */
+    max-width: 100% !important;     /* Let it span the width */
     margin: 0 auto !important;
-    padding: 20px !important;
-    position: relative; /* Anchor for the arrows */
+    padding: 20px 0 !important;
+    position: relative;             /* Anchor for your arrows */
 }
 
-/* 2. THE TRAY: Forces the horizontal 'pipe' to stay open */
+/* 2. THE TRAY: Forces the horizontal scroll engine to run */
 #checklist-grid.grid-3 {
     display: flex !important;
     flex-wrap: nowrap !important;
-    overflow-x: auto !important; 
+    overflow-x: auto !important;
     width: 100% !important;
+    padding: 20px 20px 60px 20px !important; /* Gutter + Scrollbar space */
     justify-content: flex-start !important;
-    padding: 10px 0 60px 0 !important; /* Space for the scrollbar */
     -webkit-overflow-scrolling: touch;
 }
 
-/* 3. THE CARDS: Locks widths so they don't squish (desktop) or stretch (mobile) */
-
+/* 3. THE CARDS: No-Squish, No-Stretch Lock */
 /* Desktop (MSI Laptop) */
 @media (min-width: 769px) {
     #checklist-grid > div, 
     #checklist-grid .case-file, 
     #checklist-grid .info-card {
-        flex: 0 0 350px !important; /* Forces 350px width */
+        flex: 0 0 350px !important;
         min-width: 350px !important;
         width: 350px !important;
         flex-shrink: 0 !important; /* STOPS THE SQUISH */
@@ -841,7 +840,7 @@ details.faq-drop[open] summary::after { content: ' —'; }
     #checklist-grid::-webkit-scrollbar { height: 12px !important; display: block !important; }
     #checklist-grid::-webkit-scrollbar-thumb { background: #ff9900 !important; border-radius: 10px; }
 
-    /* --- THE NAVIGATION ARROWS (<< and >>) --- */
+    /* --- THE NAVIGATION OVERLAYS (<< and >>) --- */
     #spotters::before, #spotters::after {
         position: absolute;
         top: 50%;
@@ -853,9 +852,9 @@ details.faq-drop[open] summary::after { content: ' —'; }
         pointer-events: none;
         transition: color 0.3s ease;
     }
-    #spotters::before { content: '<<'; left: 0; }
-    #spotters::after { content: '>>'; right: 0; }
-    #spotters:hover::before, #spotters:hover::after { color: rgba(255, 102, 0, 1); }
+    #spotters::before { content: '<<'; left: 10px; }
+    #spotters::after { content: '>>'; right: 10px; }
+    #spotters:hover::before, #spotters:hover::after { color: #ff6600; }
 }
 
 /* Mobile/Small Screen (Pixel 8) */
