@@ -800,30 +800,32 @@ details.faq-drop[open] summary::after { content: ' —'; }
     
  /* leave this in place  */
 
-/* --- FINAL ID-SPECIFIC REPAIR --- */
+/* --- THE CLEAN ROOM REBUILD (Based on test.css) --- */
 
-/* 1. DESKTOP: Stops the "Pancake" squish and forces the scroll */
 @media (min-width: 769px) {
+    /* Force the parent container to stop 'pinching' the tray into the center */
+    .section-wrapper, .info-container {
+        align-items: flex-start !important;
+    }
+
     #checklist-grid, .grid-3 {
         display: flex !important;
         flex-wrap: nowrap !important;
-        overflow-x: auto !important;
+        overflow-x: auto !important; /* THE PIPE: Forces the scrollbar */
+        width: 100% !important;
         justify-content: flex-start !important;
         padding: 20px 20px 60px 20px !important;
     }
 
-    /* THE LOCK: Using the ID to force the 350px width */
-    #checklist-grid > div, 
-    #checklist-grid .info-card,
-    .grid-3 > div {
+    /* THE LOCK: Stops the 'Pancake' squish from your screenshots */
+    #checklist-grid > div, .grid-3 > div, .grid-3 .info-card {
         flex: 0 0 350px !important;
         min-width: 350px !important;
-        width: 350px !important;
-        flex-shrink: 0 !important; /* THE KILLER: Stops them from squishing */
+        flex-shrink: 0 !important; /* THE MOST IMPORTANT LINE */
         margin-right: 25px !important;
     }
 
-    /* Forced Orange Scrollbar for Windows */
+    /* Forced Orange Scrollbar for Desktop */
     #checklist-grid::-webkit-scrollbar, .grid-3::-webkit-scrollbar { 
         height: 12px !important; 
         display: block !important; 
@@ -834,18 +836,17 @@ details.faq-drop[open] summary::after { content: ' —'; }
     }
 }
 
-/* 2. MOBILE: Fixes the Hanging Edge and Peek */
+/* MOBILE: Fixes hanging edge and forces peek */
 @media (max-width: 768px) {
     #checklist-grid, .grid-3 {
-        padding-left: 20px !important; /* Pushes Harman card away from the screen bezel */
-        padding-right: 20px !important;
+        display: flex !important;
+        padding-left: 20px !important; 
+        width: 100% !important;
     }
-
-    #checklist-grid > div, 
-    #checklist-grid .info-card,
-    .grid-3 > div {
-        flex: 0 0 85% !important; /* Forces the 15% peek on the right */
+    #checklist-grid > div, .grid-3 > div {
+        flex: 0 0 85% !important;
         min-width: 85% !important;
         flex-shrink: 0 !important;
+        margin-right: 15px !important;
     }
 }
