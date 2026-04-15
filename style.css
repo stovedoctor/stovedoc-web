@@ -846,3 +846,40 @@ details.faq-drop[open] summary::after { content: ' —'; }
         margin-right: 15px !important;
     }
 }
+    /* --- THE TRAY NAVIGATION OVERLAYS --- */
+@media (min-width: 769px) {
+    #spotters { position: relative; }
+
+    /* Left Arrow Overlay */
+    #spotters::before {
+        content: '<<';
+        position: absolute;
+        left: 20px;
+        bottom: 100px; /* Aligns with the middle of the cards */
+        color: rgba(255, 153, 0, 0.3);
+        font-size: 2rem;
+        font-weight: 900;
+        z-index: 50;
+        pointer-events: none; /* Let clicks pass through to the cards */
+        transition: color 0.3s ease;
+    }
+
+    /* Right Arrow Overlay */
+    #spotters::after {
+        content: '>>';
+        position: absolute;
+        right: 20px;
+        bottom: 100px;
+        color: rgba(255, 153, 0, 0.3);
+        font-size: 2rem;
+        font-weight: 900;
+        z-index: 50;
+        pointer-events: none;
+        transition: color 0.3s ease;
+    }
+
+    /* Light up the arrows when hovering over the symptom section */
+    #spotters:hover::before, #spotters:hover::after {
+        color: rgba(255, 153, 0, 1);
+    }
+}
