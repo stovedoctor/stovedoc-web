@@ -800,14 +800,15 @@ details.faq-drop[open] summary::after { content: ' —'; }
     
  /* leave this in place  */
 
-/* --- THE STOVE DOC: FINAL CHASSIS ALIGNMENT --- */
+/* --- STOVE DOC: FINAL CHASSIS & NAVIGATION --- */
 
-/* 1. DESKTOP: Breaking the 'Straightjacket' */
+/* 1. DESKTOP: Breaking the 'Centering Clamp' and forcing the scroll */
 @media (min-width: 769px) {
-    /* Forces the parent to stop pinching the tray into the center */
+    /* Forces the parent to stop pinching the tray */
     #spotters.section-wrapper {
         align-items: stretch !important;
         display: block !important; 
+        position: relative; /* Needed for the arrows */
     }
 
     #checklist-grid.grid-3 {
@@ -816,27 +817,48 @@ details.faq-drop[open] summary::after { content: ' —'; }
         overflow-x: auto !important; /* THE PIPE: Forces the scrollbar */
         width: 100% !important;
         padding: 20px 0 60px 0 !important;
+        justify-content: flex-start !important;
         -webkit-overflow-scrolling: touch;
     }
 
-    /* THE LOCK: Same as your working test.css */
+    /* THE LOCK: Stops the 'Pancake' squish at 100% zoom */
     #checklist-grid > div, #checklist-grid .case-file {
         flex: 0 0 350px !important;
         min-width: 350px !important;
-        flex-shrink: 0 !important; /* STOPS THE PANCAKE SQUISH */
+        flex-shrink: 0 !important; 
         margin-right: 25px !important;
     }
 
-    /* FORCED ORANGE SCROLLBAR (MSI Laptop) */
+    /* FORCED ORANGE SCROLLBAR */
     #checklist-grid::-webkit-scrollbar { height: 12px !important; display: block !important; }
     #checklist-grid::-webkit-scrollbar-thumb { background: #ff9900 !important; border-radius: 10px; }
+
+    /* --- THE NAVIGATION ARROWS (Hover Only) --- */
+    #spotters::before, #spotters::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3rem;
+        font-weight: 900;
+        color: rgba(255, 102, 0, 0.2); /* Dimmed by default */
+        z-index: 100;
+        pointer-events: none;
+        transition: color 0.3s ease;
+    }
+    #spotters::before { content: '<<'; left: 10px; }
+    #spotters::after { content: '>>'; right: 10px; }
+
+    /* Light up orange when you hover over the section */
+    #spotters:hover::before, #spotters:hover::after {
+        color: rgba(255, 102, 0, 1);
+    }
 }
 
 /* 2. MOBILE: Fixes the hanging edge and forces the 85% peek */
 @media (max-width: 768px) {
     #checklist-grid.grid-3 {
         display: flex !important;
-        padding-left: 20px !important; 
+        padding-left: 20px !important; /* Pushes card away from bezel */
         width: 100% !important;
     }
     #checklist-grid > div, #checklist-grid .case-file {
@@ -844,42 +866,5 @@ details.faq-drop[open] summary::after { content: ' —'; }
         min-width: 85% !important;
         flex-shrink: 0 !important;
         margin-right: 15px !important;
-    }
-}
-    /* --- THE TRAY NAVIGATION OVERLAYS --- */
-@media (min-width: 769px) {
-    #spotters { position: relative; }
-
-    /* Left Arrow Overlay */
-    #spotters::before {
-        content: '<<';
-        position: absolute;
-        left: 20px;
-        bottom: 100px; /* Aligns with the middle of the cards */
-        color: rgba(255, 153, 0, 0.3);
-        font-size: 2rem;
-        font-weight: 900;
-        z-index: 50;
-        pointer-events: none; /* Let clicks pass through to the cards */
-        transition: color 0.3s ease;
-    }
-
-    /* Right Arrow Overlay */
-    #spotters::after {
-        content: '>>';
-        position: absolute;
-        right: 20px;
-        bottom: 100px;
-        color: rgba(255, 153, 0, 0.3);
-        font-size: 2rem;
-        font-weight: 900;
-        z-index: 50;
-        pointer-events: none;
-        transition: color 0.3s ease;
-    }
-
-    /* Light up the arrows when hovering over the symptom section */
-    #spotters:hover::before, #spotters:hover::after {
-        color: rgba(255, 153, 0, 1);
     }
 }
