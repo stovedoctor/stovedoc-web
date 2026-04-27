@@ -285,27 +285,13 @@ a:hover { color: #ffffff; }
 }
 
 /* --- THE FOOTER WELD (2-COL DESKTOP / 1-COL MOBILE) --- */
+/* --- THE FOOTER WELD (GLOBAL ANCHOR) --- */
 footer { 
-    border-top: 6px solid var(--flame); 
-    padding: 40px 20px; 
     background: #000;
     width: 100%;
 }
 
-.footer-grid { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; /* Desktop: 2 Cols */
-    gap: 40px; 
-    max-width: 1100px; 
-    margin: 0 auto; 
-}
 
-.footer-col {
-    color: var(--white);
-    font-size: 0.95rem;
-    line-height: 1.4; /* Tightened from 1.6 */
-    text-align: left !important; 
-}
 /* --- SQUIRREL: TEXTURED CHECKLIST CARDS --- */
 #card-ul, #card-pilot, #card-tools {
     position: relative;
@@ -498,8 +484,9 @@ footer {
     }
     .mobile-break { 
         display: block !important; 
-        content: ""; 
-        margin-top: 5px; }
+        margin-top: 5px; 
+    }
+        
 
     .doc-note { padding: 15px !important; } /* Shaves the inner margin to give text more room */
 }
@@ -517,7 +504,7 @@ footer {
     .timeline-tray .info-card { 
         flex: 0 0 85%; /* Shows most of the card on your Pixel 8 Pro */
     }
-}
+
 
 /* --- DESKTOP TRAY FIX --- */
 @media (min-width: 769px) {
