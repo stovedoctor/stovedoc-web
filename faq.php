@@ -1,4 +1,7 @@
-<?php include 'header.php'; ?>
+<?php 
+    $page_title = "Remote Support & FAQ | The Stove Doc"; 
+    include 'header.php'; 
+?>
 <section class="topheader-vid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('faqheader.webp'); background-size: cover; background-position: center;">
     <div class="header-content">
         <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo">

@@ -14,14 +14,22 @@ $v = filemtime('style.css');
 
 <?php include 'nav.php'; ?>
 
-<section class="hero-header" style="height: 30vh; background: #000;">
-    <div class="hero-overlay-content tray-header-box">
-        <h1 style="color:var(--flame); margin:0; text-transform:uppercase; font-size: 3rem; text-shadow: 3px 3px 5px #000;">
-            CODE 404
-        </h1>
-        <div class="pill-text-unit" style="color: #fff; font-size: 1.2rem; margin-top: 15px;">
-            <strong style="color: var(--flame);">YOU REACHED THE END OF THE INTERNET! LOL :</strong> <br>
-            The page you're looking for has changed or under construction.
+<section class="topheader-vid" style="height: 40vh; display: flex; align-items: center; justify-content: center;">
+    <div class="header-content">
+        <h1 style="font-size: 4rem; margin-bottom: 10px;">CODE 404</h1>
+        
+        <div class="tray-header-box">
+            <div class="pill-text-unit">
+                <strong style="color: var(--flame);">YOU REACHED THE END OF THE INTERNET!</strong>
+                <span class="mobile-break"></span>
+                The page you're looking for has changed or is under construction.
+            </div>
+        </div>
+        
+        <div class="cta-section" style="margin-top: 30px;">
+            <a href="index.php" class="book-btn" style="padding: 10px 25px;">
+                RETURN TO HOMEBASE
+            </a>
         </div>
     </div>
 </section>
