@@ -531,5 +531,3 @@ function openDiagnostic(imgUrl) {
 }
 </script>
 
-</body>
-</html>

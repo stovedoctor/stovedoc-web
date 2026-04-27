@@ -84,5 +84,3 @@
             document.getElementById(id).href = val;
         }
     </script>
-</body>
-</html>

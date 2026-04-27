@@ -1,108 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Legacy | The Stove Doctor</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo filemtime('style.css'); ?>">
-     <meta name="darkreader-lock"> 
-</head>
-<body>
+<?php 
+$page_title = "The Legacy | The Stove Doctor";
+include 'header.php'; 
+?>
 
-<?php include 'nav.php'; ?>
-
-<section class="hero-header" style="background-image: url('tools_bg.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <div class="hero-overlay-content tray-header-box">
-        <h1 style="color:#fff; margin:0; text-transform:uppercase; font-size: 2.8rem; letter-spacing: 2px; text-shadow: 3px 3px 5px #000;">
-            The Legacy
-        </h1>
-        
-        <div class="pill-text-unit" style="color: #ff8c00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; text-shadow: 2px 2px 4px #000;">
-            35 years of evolution. I built the showrooms, stocked the warehouses, and launched the web’s first parts store.<br>
-            I’ve taken that hands-on history and adapted to the new digital world.<br>
-            <span style="color: #fff; display: block; margin-top: 15px; text-shadow: 2px 2px 4px #000;">
-                "When the manual ends, my experience begins."
-            </span>
+<section class="topheader-vid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('tools_bg.jpg'); background-size: cover; background-position: center;">
+    <div class="header-content">
+        <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo">
+        <div class="tray-header-box">
+            <h1>The Legacy</h1>
+            <div class="pill-text-unit">36 Years of Evolution <span class="mobile-break"></span> From Warehouse to Telehearth</div>
         </div>
     </div>
 </section>
 
-<div class="section-wrapper" style="margin-top: 60px;">
-    <h2 style="color:#fff; text-transform:uppercase; margin-bottom:40px; letter-spacing: 2px;">The Evolution of the Stove Doc.</h2>
-    
-<div class="grid-3">
-    <div class="case-file look-smoky">
-    <h2 style="color:var(--flame);">1990 – 2009</h2>
-    <h3 style="text-transform:uppercase;">The Global Presence</h3>
-    <p>Founded <strong>Climate Control Systems</strong> with my parents. By '95, I was a digital pioneer, building the web’s largest parts warehouse. As a licensed HVAC contractor, I managed a global inventory, a premier showroom, and full field crews.</p>
-</div>
+<main class="main-container">
 
-<div class="case-file look-smoky">
-    <h2 style="color:var(--flame);">2009</h2>
-    <h3 style="text-transform:uppercase;">The Hardest Triage</h3>
-    <p>When the crash hit, I closed my 19-year-old baby. The showroom and store were gone, but I realized my real value wasn't in the building—<strong>it was in the decades of technical logic I carried with me.</strong> I chose the wrench over the warehouse.</p>
-</div>
-
-   <div class="case-file look-smoky">
-    <h2 style="color:var(--flame);">2009 – Present</h2>
-    <h3 style="text-transform:uppercase;">The Service Specialist</h3>
-    <p>I traded the warehouse for my service truck and founded <strong>The Stove Doc</strong>. I took two decades of gas logic and pellet expertise directly to the field. Now, <strong>Telehearth</strong> brings that 35+ years of grit to your screen.</p>
-</div>
-</div>
-    
-    
-    
-<hr style="border: 0; height: 2px; background: linear-gradient(to right, transparent, var(--flame), transparent); width: 90%; margin: 30px auto; opacity: 0.6;">
-    
-    
-    
-    
-    
-<div class="section-wrapper" style="margin-top: 10px;">
-    <h2 style="color:#fff; text-transform:uppercase; margin-bottom:40px;">Industry Standards & Leadership</h2>
-    <div class="grid-3">
-    <div class="case-file look-smoky">
-    <h3 style="text-transform:uppercase; color:var(--flame);">The Parts Pioneer</h3>
-    <p>It started with phone calls about <strong>Pellet Master</strong> stoves. I put a few items online to help them out, and it exploded into the web’s first major <strong>ONLINE PARTS STORE</strong> by 1995. I was shipping parts worldwide long before the Amazon era.</p>
-</div>
-
-<div class="case-file look-smoky">
-    <h3 style="text-transform:uppercase; color:var(--flame);">The "Sticky" Standard</h3>
-    <p>A Senior Moderator on major industry forums under the handle <strong>hearthtools</strong>. My pellet stove and gas diagnostic guides are permanently pinned "Sticky Posts"—serving as the global standard for DIY repair.</p>
-</div>
-
-<div class="case-file look-smoky">
-    <h3 style="text-transform:uppercase; color:var(--flame);">Foundational Leadership</h3>
-    <p>Deep industry roots with board-level execution. I served on the original committee that developed the <strong>NFI</strong> and sat on the <strong>HPBA Pacific Board</strong>, bringing decades of technical strategy to every diagnostic.</p>
-</div>
+<section class="section-wrapper" style="margin-top: 15px; margin-bottom: 25px;">
+    <div class="doc-note" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        
+        <p class="legacy-quote">
+            "When the manual ends, <span class="global-break"></span> my experience begins."
+        </p>
+        
+        <p style="font-size: 1.15rem; line-height: 1.6; color: var(--white); margin: 0; text-align: center !important;">
+            I built the showrooms, stocked the warehouses, and launched the web’s first parts store. 
+            I’ve taken that hands-on history and adapted it to the new digital world to provide 
+            remote diagnostics that get your heat back on today.
+        </p>
     </div>
-</div>
+</section>
 
-<div class="section-wrapper" style="margin-top: 80px;">
-    <h2 style="color:var(--flame); text-transform:uppercase; margin-bottom: 40px;">Patient Outcomes (Case Files)</h2>
-    <div class="faq-accordion" style="max-width: 900px; margin: 0 auto;"> 
-        <div class="box-base look-smoky accent-left">
-            <p>"Helped me troubleshoot a 20 year old pellet stove just through Facebook messenger with pictures and video!! Ten stars if I could rate him that!!!"</p>
-            <strong>— James Hallenbeck, New York</strong>
-        </div>
 
-        <div class="box-base look-smoky accent-left">
-            <p>"Took the time to text me figures and instructions on how to check the voltage of various systems. Learned a lot and was able to figure out what was wrong with his help."</p>
-            <strong>— Rhett Fisher, Gas System Triage</strong>
-        </div>
+    <section class="section-wrapper" style="margin-top: 10px;">
+        <h2 style="color:#fff; margin-bottom: 20px;">The Evolution of the Stove Doc</h2>
+        
+        <div class="timeline-wrapper">
+            <div class="scroll-arrow arrow-left" onclick="document.getElementById('evolution-tray').scrollBy({left: -370, behavior: 'smooth'})">&#10094;</div>
+            <div class="scroll-arrow arrow-right" onclick="document.getElementById('evolution-tray').scrollBy({left: 370, behavior: 'smooth'})">&#10095;</div>
+            
+            <div class="timeline-tray" id="evolution-tray">
+                <div class="info-card">
+                    <h2 style="color:var(--flame); font-size: 1.4rem;">1990 – 2009</h2>
+                    <h3 style="font-size: 1.1rem;">The Global Presence</h3>
+                    <p>Founded <strong>Climate Control Systems</strong>. By '95, I was a digital pioneer, building the web’s largest parts warehouse and managing global inventory.</p>
+                </div>
 
-        <div class="box-base look-smoky accent-left">
-            <p>"He gave me the confidence I needed to clear the obstruction myself. I had it done in less than an hour with minimal tools because of his help. Highly recommend!"</p>
-            <strong>— Andrew Peters, Pellet Auger Save</strong>
-        </div>
+                <div class="info-card">
+                    <h2 style="color:var(--flame); font-size: 1.4rem;">2009</h2>
+                    <h3 style="font-size: 1.1rem;">The Hardest Triage</h3>
+                    <p>When the crash hit, I chose the wrench over the warehouse. I realized my real value wasn't in the building—it was in the decades of technical logic I carried.</p>
+                </div>
 
-        <div class="box-base look-smoky accent-left">
-            <p>"Took the time to respond with information that allowed me to fix the problem immediately and avoid buying any unnecessary parts. (HIGHLY!!!) recommend him."</p>
-            <strong>— Valerie Wendeln, Breckwell P 24</strong>
+                <div class="info-card">
+                    <h2 style="color:var(--flame); font-size: 1.4rem;">Present</h2>
+                    <h3 style="font-size: 1.1rem;">The Service Specialist</h3>
+                    <p>I traded the warehouse for the service truck. Now, <strong>Telehearth</strong> brings that 36+ years of field grit directly to your screen.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
+    
+    <section class="section-wrapper" style="margin-top: 20px; margin-bottom: 20px;">
+        <h2 style="color:var(--flame); text-transform:uppercase; margin-bottom: 15px;">Patient Outcomes (Case Files)</h2>
+        
+        <div class="grid-equal-2"> 
+            <div class="bg-tool-card faq-card" style="cursor: default; margin-bottom: 0 !important;">
+                <div class="bg-tool-content">
+                    <p>"Helped me troubleshoot a 20 year old pellet stove through Facebook messenger!! Ten stars if I could rate him that!!!"</p>
+                    <strong style="color:var(--flame);">— James Hallenbeck, New York</strong>
+                </div>
+            </div>
+
+            <div class="bg-tool-card faq-card" style="cursor: default; margin-bottom: 0 !important;">
+                <div class="bg-tool-content">
+                    <p>"Took the time to text me figures and instructions on how to check the voltage of various systems. Learned a lot and was able to figure out what was wrong."</p>
+                    <strong style="color:var(--flame);">— Rhett Fisher, Gas System Triage</strong>
+                </div>
+            </div>
+
+            <div class="bg-tool-card faq-card" style="cursor: default; margin-bottom: 0 !important;">
+                <div class="bg-tool-content">
+                    <p>"He gave me the confidence I needed to clear the obstruction myself. Done in less than an hour with minimal tools."</p>
+                    <strong style="color:var(--flame);">— Andrew Peters, Pellet Auger Save</strong>
+                </div>
+            </div>
+
+            <div class="bg-tool-card faq-card" style="cursor: default; margin-bottom: 0 !important;">
+                <div class="bg-tool-content">
+                    <p>"Information that allowed me to fix the problem immediately and avoid buying any unnecessary parts. (HIGHLY!!!) recommend him."</p>
+                    <strong style="color:var(--flame);">— Valerie Wendeln, Breckwell P 24</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
 
 <?php include 'footer.php'; ?>
-</body>
-</html>

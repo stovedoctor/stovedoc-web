@@ -1,86 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telehearth Clinic Info | The Stove Doc</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo filemtime('style.css'); ?>"><br>
-    <meta name="darkreader-lock"> 
-</head>
-<body>
+<?php 
+    $page_title = "Telehearth Clinic | The Stove Doc"; 
+    include 'header.php'; 
+?>
 
- <?php include 'nav.php'; ?>   
-<section class="hero-header hero-clinic"> 
-    <div class="hero-overlay-content"> <img src="newstovedoc_logo.png" alt="The Stove Doc" class="main-body-logo">
+<section class="topheader-vid hero-clinic"> 
+    <div class="header-content"> 
+        <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo">
 
         <div class="tray-header-box"> 
-            <h1 style="color:#fff; margin:0; text-transform:uppercase; font-size: 2.2rem; text-shadow: 3px 3px 5px #000;">The Telehearth Clinic</h1>
-            <div class="pill-text-unit" style="color: #ff8c00; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; text-shadow: 2px 2px 4px #000;">
-                Expert Diagnostics for Stoves & Fireplaces
-            </div>
+            <h1>The Telehearth Clinic</h1>
+            <div class="pill-text-unit">
+    Expert Diagnostics for <span class="mobile-break"></span> Stoves & Fireplaces
+</div>
         </div>
-
     </div>
 </section>
-</section>
+
 <div class="section-wrapper">
-    <div style="text-align:center; margin-bottom:40px;">
-        <p style="font-size: 1.2rem;"><strong>Stop guessing and skip the 2-week wait.</strong> I’ll diagnose your hearth appliance in real-time.</p>
+    <div class="intro-block">
+        <p><strong>Stop guessing and skip the 2-week wait.</strong>
+        <span class="mobile-break"></span> 
+        I’ll diagnose your hearth appliance in real-time.</p>
     </div>
+</div>
 
+<div class="service-tier-wrapper">
     <div class="grid-3">
-        <div class="info-card">
-            <h3 style="color:var(--flame);">Troubleshooting</h3>
-            <p>Identify the failure & and where to find correct parts if needed.</p>
-            <h2 style="color:#fff; font-size: 2.2rem; margin: 10px 0;">$75</h2>
+        <div class="info-card service-tier">
+            <h3>Troubleshooting</h3>
+            <p>Identify the failure & find correct parts if needed.</p>
+            <h2>$75</h2>
             <p>20 Minute Session</p>
         </div>
-        <div class="info-card" style="border-top-color:#fff;">
-            <h3 style="color:var(--flame);">Guided Repair</h3>
-            <p>Step-by-step parts install and calibration via Video Call.</p>
-            <h2 style="color:#fff; font-size: 2.2rem; margin: 10px 0;">$149</h2>
+
+        <div class="info-card service-tier" style="border-top-color: var(--white);">
+            <h3>Guided Repair</h3>
+            <p>Step-by-step parts install via Video Call.</p>
+            <h2>$149</h2>
             <p>Up to 60 Minute Session</p>
         </div>
-        <div class="info-card">
+
+        <div class="info-card service-tier">
             <h3>Membership</h3>
             <p>Priority support & annual maintenance walkthroughs.</p>
-            <h2 style="color:#fff; font-size: 2.2rem; margin: 10px 0;">$199/yr</h2>
+            <h2>$199/yr</h2>
             <p>Full Season Protection</p>
         </div>
     </div>
+</div>
 
-   <h2 style="text-align:center; margin: 60px 0 30px 0; text-transform:uppercase; color:var(--flame); letter-spacing: 2px;">Doctor's Orders: Pre-Clinic Checklist</h2>
-    
-    <div class="grid-3" id="checklist-grid">
-        <a href="ul.jpg" target="_blank" class="info-card" style="text-decoration: none;">
-            <h3 style="color:#fff;">1. Initial Assessment</h3>
+    <section class="section-wrapper">
+    <h2>Doctor's Orders: Pre-Clinic Checklist</h2>
+    <div class="grid-3">
+        <a href="ul.jpg" target="_blank" class="info-card" id="card-ul" style="text-decoration: none;">
+            <h3>1. Initial Assessment</h3>
             <p><strong>UL ID Tag:</strong> High-res photo of Brand, Model & Serial.</p>
-            <p><strong>"Diagnostic Imaging:</strong> Take shots of the firebox/Burner logs and burn pot <strong>BEFORE</strong> you clean it.</p>
+            <p><strong>Imaging:</strong> Shots of firebox BEFORE you clean it.</p>
         </a>
 
-        <a href="pilot.jpeg" target="_blank" class="info-card" style="text-decoration: none;">
-            <h3 style="color:#fff;">2. Technical Deep-Dive</h3>
-            <p><strong>Internals:</strong> High-res views of the pilot assembly, control valve, and logs (for gas).</p>
-            <p><strong>Access:</strong> Have all access panels open and the area cleared before we start.</p>
+        <a href="pilot.jpeg" target="_blank" class="info-card" id="card-pilot" style="text-decoration: none;">
+            <h3>2. Technical Deep-Dive</h3>
+            <p><strong>Internals:</strong> High-res views of pilot assembly and valve.</p>
+            <p><strong>Access:</strong> Have all panels open before we start.</p>
         </a>
 
-        <a href="tools2.php" class="info-card" style="text-decoration: none;">
-            <h3 style="color:#fff;">3. Tools & Connectivity</h3>
-            <p style="color:var(--flame); font-weight:bold; margin-bottom: 15px;">Click here for the suggested Surgical Tool Tray.</p>
-            <p><strong>The Uplink:</strong> Smartphone or tablet with a strong signal and your video app ready.</p>
+        <a href="tools2.php" class="info-card" id="card-tools" style="text-decoration: none;">
+            <h3>3. Tools & Connectivity</h3>
+            <p style="color:var(--flame); font-weight:bold; margin-bottom: 10px;">Click for the Surgical Tool Tray.</p>
+            <p><strong>The Uplink:</strong> Smartphone ready with a strong video signal.</p>
         </a>
-    </div> <div style="text-align:center; margin-top:50px; width:100%;">
-        <a href="booking.php" class="cta-btn" style="font-size: 1.3rem; padding: 18px 50px;">I'M PREPARED — BOOK MY SESSION</a>
+    </div> 
+</section>
+
+    <div class="cta-section" style="margin-top: 20px;">
+        <a href="booking.php" class="book-btn">
+            I'M PREPARED — BOOK MY SESSION
+            <span class="btn-sub">Click to view available clinic times</span>
+        </a>
     </div>
 
-    <div class="box-base look-solid" style="margin: 5px auto; border: 2px solid var(--flame); padding: 30px; text-align: center; max-width: 900px;">
+  <div class="doc-note">
     <strong style="color: var(--flame);">DOCTOR'S NOTE:</strong> I specialize in Pellet, Gas, and Wood Heating Appliances. 
     I do not service cook stoves or ranges.
 </div>
-
-</div> 
-    
 <?php include 'footer.php'; ?>
-
-</body>
-</html>
