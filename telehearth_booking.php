@@ -3,7 +3,7 @@
     include 'header.php'; 
 ?>
 
-<section class="topheader-vid hero-clinic"> 
+<section class="hero-clinic"> 
     <div class="header-content"> 
         <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo">
 

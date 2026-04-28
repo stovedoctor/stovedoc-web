@@ -141,10 +141,26 @@ a:hover { color: #ffffff; }
     margin: 2px 0 0 0 !important;
     text-align: center !important;
 }
-
+.hero-clinic::before {
+    content: "Video Call: \A Tuesday w/ StoveDoc";
+    white-space: pre-wrap;
+    position: absolute;
+    top: 5px; 
+    right: 5px;
+    background: #ffeb3b; /* Classic Post-it Yellow */
+    color: #000;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace; /* Handwriting vibe */
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 10px 2px 50px rgba(0, 0, 0, 0.5);
+    transform: rotate(3deg); /* Slightly crooked for realism */
+    z-index: 6;
+    border-left: 5px solid rgba(0,0,0,0.1);
+}
 /* --- TELEHEARTH CLINIC (MONITOR STYLE - NO STAND) --- */
 .hero-clinic {
-    width: 95% !important; 
+    width: 98% !important; 
     max-width: 1100px !important; 
     position: relative;
     border: 12px solid #222 !important; 
@@ -158,6 +174,22 @@ a:hover { color: #ffffff; }
     box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     overflow: hidden !important; 
    margin: 20px auto 0 auto !important;
+}
+
+
+.hero-clinic::after {
+    content: "TELEHEARTH 4K";
+    position: absolute;
+    bottom: 12px !important; /* Moved higher to clear the bezel and hidden overflow */
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.3) !important; /* Brighter etch */
+    font-size: 10px;
+    letter-spacing: 5px;
+    font-weight: 900;
+    z-index: 99 !important; /* Higher than background and text */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Adds a 'carved' depth */
+    pointer-events: none;
 }
 
 .hero-clinic .tray-header-box {
@@ -446,13 +478,49 @@ footer {
 /* 2. STANDARD MOBILE (768px - Pixel 8 Pro) */
 @media (max-width: 768px) {
     .topheader-vid { height: 250px !important; }
-    .hero-logo { height: 140px !important; }
+    .hero-logo { 
+        height: 120px !important; /* Tightened from 140px for the monitor frame */
+        width: auto; 
+        margin-bottom: 5px !important;
+    }
     .grid-2 { grid-template-columns: 1fr !important; gap: 20px; }
     .grid-2 img.thumb-fit { max-width: 250px !important; margin: 0 auto; display: block; }
     .grid-equal-2 { grid-template-columns: 1fr !important; }
     .grid-3 { grid-template-columns: 1fr !important; }
     .spotter-card { flex: 0 0 80% !important; }
-    .hero-clinic { width: 100% !important; margin: 0 0 10px 0 !important; border: none !important; height: 65vw !important; }
+    .hero-clinic { 
+        width: 96% !important; 
+        margin: 15px auto 10px auto !important; 
+        border: 8px solid #222 !important; 
+        border-bottom-width: 15px !important;
+        background-size: cover !important; /* Switched back to cover for height flexibility */
+        background-position: center 20% !important;
+        /* THE FIX: Sets a proportional height but allows it to grow if text pushes it */
+        height: auto !important; 
+        min-height: 60vw !important; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0 !important; /* Adds internal vertical "safety air" */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .hero-clinic::before {
+        font-size: 0.55rem !important; 
+        padding: 4px 6px !important; 
+        /* Increase these to at least 8px so it stays on the 'glass' */
+        top: 3px !important; 
+        right: 3px !important; 
+        max-width: 75px !important;
+        line-height: 1.1 !important;
+        z-index: 21 !important; /* Forces it above everything else */
+    }
+    .hero-clinic .header-content {
+        padding: 0 15px !important; /* Creates a 15px safety buffer from the monitor edges */
+        width: 100%;
+        text-align: center;
+    }    
     .hero-clinic .tray-header-box { padding: 10px 20px !important; }
     .hero-clinic h1 { text-shadow: 3px 3px 8px #000 !important; }
     .legacy-quote { font-size: 1.2rem !important; letter-spacing: 1px !important; }
