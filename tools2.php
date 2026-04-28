@@ -95,11 +95,43 @@
         </dialog>
     </div>
 </section>
-<div style="text-align:center; margin: 60px 0;">
-    <a href="telehearth_booking.php" class="cta-btn" style="font-size: 1.3rem; padding: 15px 40px; text-decoration: none; background: var(--flame); color: #fff; border-radius: 5px; font-weight: bold; text-transform: uppercase;">
-        Book the Doctor Now
-    </a>
-</div>
+<section class="section-wrapper" style="border-top: 1px solid #333; margin-top: 30px; padding-top: 20px;">
+    
+    <div style="max-width: 850px; margin: 0 auto; text-align: center;">
+
+        <a href="telehearth_booking.php" class="info-card" style="text-decoration: none; border: 3px solid var(--flame); display: block; padding: 25px 20px 40px 20px; background: rgba(255, 102, 0, 0.05); transition: all 0.3s ease;">
+            
+            <h2 style="color: var(--flame); font-size: clamp(1.6rem, 5vw, 2.2rem); margin-top: 0; margin-bottom: 10px; line-height: 1.1;">
+                Got the Gear? <span class="mobile-break"></span> Now Get the Guide.
+            </h2>
+            
+            <p style="text-align: center; font-size: clamp(0.9rem, 3vw, 1.1rem); color: #fff; margin-bottom: 20px; margin-top: 0; line-height: 1.3;">
+                Owning the tools is the first step. <span class="mobile-break"></span> Knowing where to point them is the second.
+            </p>
+
+            <div style="text-align: center; margin-bottom: 15px;">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--flame)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+            </div>
+            
+            <h3 style="font-size: clamp(1.2rem, 4vw, 1.6rem); margin-top: 0; color: var(--white); letter-spacing: 1px;">ENTER THE TELEHEARTH CLINIC</h3>
+            <p style="text-align: center; font-size: 0.95rem; color: #ccc; margin-bottom: 25px;">
+                Skip the 2-week wait. <span class="mobile-break"></span> Book your troubleshooting session now.
+            </p>
+
+            <div style="text-align: center;">
+                <span class="book-btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px !important; border-radius: 6px !important; font-size: 1rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    START YOUR PROCEDURE
+                </span>
+            </div>
+        </a>
+
+        <div style="margin-top: 20px; color: #666; font-size: 0.85rem; font-style: italic;">
+            "Stop guessing. Start fixing. Let's get your stove or fireplace burning."
+        </div>
+    </div>
+</section>
 
 <?php include 'footer.php'; ?>
-

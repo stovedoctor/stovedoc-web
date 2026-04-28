@@ -19,10 +19,10 @@ include 'header.php';
     <div class="doc-note" style="max-width: 1000px; margin: 0 auto; text-align: center;">
         
         <p class="legacy-quote">
-            "When the manual ends, <span class="global-break"></span> my experience begins."
+            "When the manual ends,<span class="global-break"></span> my experience begins."
         </p>
         
-        <p style="font-size: 1.15rem; line-height: 1.6; color: var(--white); margin: 0; text-align: center !important;">
+        <p style="font-size: 1rem; line-height: 1.6; color: var(--white); margin: 0; text-align: center !important;">
             I built the showrooms, stocked the warehouses, and launched the web’s first parts store. 
             I’ve taken that hands-on history and adapted it to the new digital world to provide 
             remote diagnostics that get your heat back on today.
@@ -91,18 +91,18 @@ include 'header.php';
                     <strong style="color:var(--flame);">— Valerie Wendeln, Breckwell P 24</strong>
                 </div>
             </div>
-    </div> <section class="section-wrapper" style="margin: 40px auto 60px auto; max-width: 900px;">
-            <div class="info-card" style="padding: 40px 20px; border-top: 3px solid var(--flame); background: rgba(255,102,0,0.05); text-align: center;">
+    </div> <section class="section-wrapper" style="margin: 20px auto 20px auto; max-width: 900px;">
+            <div class="info-card" style="padding: 10px 20px; border-top: 3px solid var(--flame); background: rgba(255,102,0,0.05); text-align: center;">
                 
                 <p style="font-size: 1.2rem; color: #fff; margin-bottom: 15px; text-align: center !important;">
                     Ready to see that experience in action?
                 </p>
                 
-                <a href="index.php" style="color: var(--flame); font-weight: 900; text-decoration: none; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 2px solid var(--flame); display: inline-block;">
+                <a href="index.php" style="color: var(--flame); font-weight: 900; text-decoration: none; font-size: .9rem; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 2px solid var(--flame); display: inline-block;">
                     RETURN TO THE TELEHEARTH CLINIC →
                 </a>
 
-                <div style="margin-top: 25px; color: #666; font-size: 0.85rem; font-style: italic;">
+                <div style="margin-top: 25px; color: #ffffff; font-size: 0.85rem; font-style: italic;">
                     "Stop guessing. Start fixing. Let's get your fire back on today."
                 </div>
             </div>

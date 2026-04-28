@@ -135,11 +135,11 @@
             <span style="color: var(--flame); font-weight: bold;">$75 Session | Skip the 2-week wait.</span>
         </p>
         <div style="text-align: center; margin-top: 20px;">
-            <span class="book-btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 35px !important;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                BOOK YOUR DIAGNOSIS
-            </span>
-        </div>
+    <span class="book-btn" style="display: inline-flex; align-items: center; gap: 10px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        BOOK YOUR DIAGNOSIS
+    </span>
+</div>
     </a>
 </div>
 

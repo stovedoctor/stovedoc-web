@@ -97,7 +97,7 @@
         <strong>DESKTOP (MAC):</strong> Hold <u>Command (⌘)</u> while clicking your files.
     </p>
     <input type="file" name="crime_scene_photos[]" accept="image/*" multiple style="width:100%; color:#fff;">
-    <p style="font-size: 0.75rem; color: #666; margin-top: 10px; font-style: italic;">
+    <p style="font-size: 0.75rem; color: #ffffff; margin-top: 10px; font-style: italic;">
         Include: Firebox, Exterior, UL Label, Venting/Cap, or Trouble Codes.
     </p>
 </div>

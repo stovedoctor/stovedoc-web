@@ -50,16 +50,15 @@ a:hover { color: #ffffff; }
 .book-btn {
     display: inline-block;
     width: fit-content;
-    /* Solid background so it's not dull on mobile or desktop */
-    background: var(--flame) !important; 
-    color: #000 !important; /* High contrast black text on orange */
+    background: var(--flame) !important; /* Forces the bright orange */
+    color: #000 !important;             /* Forces high-contrast black text */
     border: 2px solid var(--flame);
     padding: 12px 25px !important; 
     font-size: 1.1rem;
     font-weight: 900;
     text-transform: uppercase;
-    text-decoration: none !important;
-    border-radius: 6px !important; /* Match your card corners better than the pill shape */
+    text-decoration: none !important;    /* Kills the "link" underline */
+    border-radius: 6px !important;
     text-align: center;
     transition: all 0.3s ease;
     line-height: 1.1;
@@ -236,14 +235,14 @@ a:hover { color: #ffffff; }
 .global-break {
     display: block !important;
     content: "";
-    margin-top: 20px; /* Adjust this for the vertical gap */
+    margin-top: 10px; /* Adjust this for the vertical gap */
 }
 
 .legacy-quote {
     color: var(--flame);
     font-weight: 800;
     font-style: italic;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 1.1;
@@ -372,35 +371,6 @@ footer {
     transition: opacity 0.4s ease;
 }
 
-/* --- THE DESKTOP-ONLY "SURGICAL" UPGRADES --- */
-@media (hover: hover) {
-    .bg-tool-card:hover {
-        /* This changes the 'finger' to a magnifying glass with a '+' */
-        cursor: zoom-in; 
-    }
-
-    /* Brighten image on hover */
-    .bg-tool-card:hover .card-bg-image {
-        opacity: 0.5;
-    }
-
-    /* Add the Orange "+" hint tag in the corner */
-    .bg-tool-card:hover::after {
-        content: "🔍+"; 
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: var(--flame);
-        color: #fff;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 0.75rem;
-        font-weight: bold;
-        z-index: 3;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        pointer-events: none; /* Prevents the tag from blocking the click */
-    }
-}
 
 /* Forces the text to stay on top of the image with depth */
 .bg-tool-content {
@@ -465,52 +435,35 @@ footer {
 .faq-card:hover::after {
     display: none !important; 
 }
+/* 1. NARROW PHONES (Surgical) */
+@media (max-width: 430px) {
+    .narrow-break {
+        display: block !important;
+        content: "";
+    }
+}
 
-/* --- MOBILE RULES (PIXEL 8 PRO OPTIMIZED) --- */
+/* 2. STANDARD MOBILE (768px - Pixel 8 Pro) */
 @media (max-width: 768px) {
     .topheader-vid { height: 250px !important; }
     .hero-logo { height: 140px !important; }
     .grid-2 { grid-template-columns: 1fr !important; gap: 20px; }
- /* Shrinks the image thumbnail on the Pixel 8 Pro */
     .grid-2 img.thumb-fit { max-width: 250px !important; margin: 0 auto; display: block; }
-    .grid-equal-2 { 
-        grid-template-columns: 1fr !important; /* Stacks cards vertically on phones */
-    }
+    .grid-equal-2 { grid-template-columns: 1fr !important; }
     .grid-3 { grid-template-columns: 1fr !important; }
     .spotter-card { flex: 0 0 80% !important; }
-
     .hero-clinic { width: 100% !important; margin: 0 0 10px 0 !important; border: none !important; height: 65vw !important; }
     .hero-clinic .tray-header-box { padding: 10px 20px !important; }
     .hero-clinic h1 { text-shadow: 3px 3px 8px #000 !important; }
-    .legacy-quote { 
-        font-size: 1.4rem !important; 
-        letter-spacing: 1px !important; 
-    }
-    .mobile-break { 
-        display: block !important; 
-        margin-top: 5px; 
-    }
-        
-
-    .doc-note { padding: 15px !important; } /* Shaves the inner margin to give text more room */
+    .legacy-quote { font-size: 1.2rem !important; letter-spacing: 1px !important; }
+    .mobile-break { display: block !important; margin-top: 5px; }
+    .doc-note { padding: 15px !important; }
+    .service-tier-wrapper { padding: 0 23px !important; }
+    .service-tier-wrapper .grid-3 { display: grid !important; grid-template-columns: 1fr !important; gap: 20px; }
+    .timeline-tray .info-card { flex: 0 0 85%; }
 }
 
-    /* THIS IS THE PART THAT PULLS CARDS OFF THE EDGE */
-    .service-tier-wrapper { 
-        padding: 0 23px !important; 
-    }
-
-    .service-tier-wrapper .grid-3 { 
-        display: grid !important; 
-        grid-template-columns: 1fr !important; 
-        gap: 20px;
-    }
-    .timeline-tray .info-card { 
-        flex: 0 0 85%; /* Shows most of the card on your Pixel 8 Pro */
-    }
-
-
-/* --- DESKTOP TRAY FIX --- */
+/* 3. DESKTOP GRID FIX (769px and up) */
 @media (min-width: 769px) {
     .service-tier-wrapper { 
         max-width: 850px; 
@@ -521,4 +474,26 @@ footer {
         display: grid; 
         grid-template-columns: repeat(3, 1fr); 
         gap: 30px; 
-    }}
+    }
+}
+
+/* 4. MOUSE/HOVER EFFECTS */
+@media (hover: hover) {
+    .bg-tool-card:hover { cursor: zoom-in; }
+    .bg-tool-card:hover .card-bg-image { opacity: 0.5; }
+    .bg-tool-card:hover::after {
+        content: "🔍+"; 
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--flame);
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        z-index: 3;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        pointer-events: none;
+    }
+}
