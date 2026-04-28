@@ -50,24 +50,28 @@ a:hover { color: #ffffff; }
 .book-btn {
     display: inline-block;
     width: fit-content;
-    background: #eaa61d7c !important; 
-    color: #ff8c00;
-    border: 2px solid #ff8c00;
-    padding: 8px 15px !important; 
+    /* Solid background so it's not dull on mobile or desktop */
+    background: var(--flame) !important; 
+    color: #000 !important; /* High contrast black text on orange */
+    border: 2px solid var(--flame);
+    padding: 12px 25px !important; 
     font-size: 1.1rem;
     font-weight: 900;
     text-transform: uppercase;
     text-decoration: none !important;
-    border-radius: 50px !important; 
+    border-radius: 6px !important; /* Match your card corners better than the pill shape */
     text-align: center;
     transition: all 0.3s ease;
     line-height: 1.1;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.2);
 }
 
 .book-btn:hover {
     background: #ff8c00 !important;
     color: #000 !important;
-    box-shadow: 0 0 15px rgba(255, 140, 0, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+    filter: brightness(1.1);
 }
 
 .btn-sub {

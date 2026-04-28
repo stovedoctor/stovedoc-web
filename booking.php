@@ -1,94 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telehearth Clinic | The Stove Doctor</title>
-   <link rel="stylesheet" href="style.css?v=<?php echo filemtime('style.css'); ?>">
-     <meta name="darkreader-lock"> 
-</head>
-<body>
+<?php 
+    $page_title = "Patient Intake | The Stove Doc"; 
+    include 'header.php'; 
+?>
 
-    <?php include 'nav.php'; ?>
-    
-    
-<section class="hero-header" style="background:#000; padding: 40px 0; text-align: center; border-bottom: 1px solid #333;">
-    <div class="hero-overlay-content">
-        <img src="newstovedoc_logo.png" alt="The Stove Doc" class="main-body-logo" style="height: 220px; width: auto; filter: drop-shadow(0 0 15px rgba(0,0,0,0.9));">
-        <h1 style="margin-top:20px; font-size: 2rem; color: #fff; text-transform: uppercase;">Patient Intake Form</h1>
+<section class="topheader-vid" style="background: #000; padding: 40px 0; border-bottom: 1px solid #333;">
+    <div class="header-content">
+        <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo" style="height: 180px; width: auto;">
+        <div class="tray-header-box">
+            <h1>Detailed Patient Intake</h1>
+            <div class="pill-text-unit">Provide All Data <span class="mobile-break"></span> Before the Procedure</div>
+        </div>
     </div>
 </section>
 
-<div class="section-wrapper">
-    <div class="info-card" style="max-width: 850px; margin: 0 auto; text-align: left; border-top-color: #fff;">
-        <h2 style="text-align:center; color:#fff; margin-top:0; text-transform: uppercase;">Intake Form</h2>
-        
-        <form action="#" method="POST" enctype="multipart/form-data" style="margin-top: 25px;">
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px; font-weight:bold;">Full Name*</label>
-                <input type="text" name="name" required style="width:100%; padding:12px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
+<main class="main-container">
+    <section class="section-wrapper" style="margin: 40px auto; max-width: 850px;">
+        <div class="info-card" style="padding: 30px; border-top: 5px solid var(--flame);">
+            
+            <h2 style="margin-top: 0; color: #fff;">CLINIC INTAKE</h2>
+            <div class="doc-note" style="border-color: #ff0000; background: rgba(255,0,0,0.1); margin-bottom: 25px;">
+                <strong style="color: #ff0000;">STRICT PROTOCOL:</strong> I specialize in Pellet, Gas, and Wood **Heating** appliances. I do <u>NOT</u> Troubleshoot cook stoves, ranges, or ovens. 
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px;">
-                <div>
-                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Email Address*</label>
-                    <input type="email" name="email" required style="width:100%; padding:12px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
-                </div>
-                <div>
-                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Cell Number*</label>
-                    <input type="tel" name="phone" required style="width:100%; padding:12px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
-                </div>
-            </div>
+           <form action="process_intake.php" method="POST" enctype="multipart/form-data" style="margin-top: 25px;">
+    <input type="hidden" name="MAX_FILE_SIZE" value="20971520">
 
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px; font-weight:bold;">Video Call Preference*</label>
-                <select name="video_preference" required style="width:100%; padding:12px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
-                    <option value="">-- How should the Doctor call you? --</option>
-                    <option value="google">Google Meet / Android Video</option>
-                    <option value="fb">FB Messenger</option>
-                    <option value="teams">Microsoft Teams</option>
-                </select>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px;">
-                <div>
-                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Brand & Model*</label>
-                    <input type="text" name="brand_model" required style="width:100%; padding:12px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
-                </div>
-                <div>
-                    <label style="display:block; margin-bottom:5px; font-weight:bold;">Serial Number*</label>
-                    <input type="text" name="serial" required style="width:100%; padding:12px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
-                </div>
-            </div>
-
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px; font-weight:bold;">The "Crime Scene" Photo (Before Cleaning)*</label>
-                <input type="file" name="crime_scene_photo" required style="width:100%; padding:10px; background:#0a0a0a; color:#fff; border:1px solid #444;">
-            </div>
-
-            <div style="margin-bottom: 25px;">
-                <label style="display:block; margin-bottom:5px; font-weight:bold;">Notes / Symptoms</label>
-                <textarea name="notes" rows="4" style="width:100%; padding:12px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;"></textarea>
-            </div>
-
-            <button type="submit" class="cta-btn" style="width:100%; border:none; cursor:pointer; font-size: 1.2rem;">SUBMIT CASE & BOOK SESSION</button>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <p class="beta-text">
-                    <strong style="color:var(--flame);">BETA SITE NOTICE:</strong> Form mail is currently being dialed-in.<br>
-                    If the submit button hangs, please message me on 
-                    <a href="https://www.facebook.com/thestovedoc" target="_blank">Facebook</a> or 
-                    email <a href="mailto:hearthtools@gmail.com">hearthtools@gmail.com</a> with your details.
-                </p>
-
-                <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:The%20Stove%20Doctor%0AORG:Hearthtools%0AEMAIL:hearthtools@gmail.com%0AURL:https://hearthtools.com%0AEND:VCARD" 
-                   download="Stove_Doctor.vcf" 
-                   class="cta-btn" style="background:#222 !important; border-radius:50px; font-size: 0.85rem; padding: 12px 25px; border-color: #444; margin-top: 15px;">
-                   📥 SAVE THE STOVE DOC TO CONTACTS
-                </a>
-            </div>
-        </form>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px;">
+        <div>
+            <label style="display:block; margin-bottom:8px; font-weight:bold; color:var(--flame);">FULL NAME*</label>
+            <input type="text" name="name" required style="width:100%; padding:14px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
+        </div>
+        <div>
+            <label style="display:block; margin-bottom:8px; font-weight:bold; color:var(--flame);">EMAIL ADDRESS* (FOR CALENDAR INVITE)</label>
+            <input type="email" name="email" required style="width:100%; padding:14px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
+        </div>
     </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px;">
+        <div>
+            <label style="display:block; margin-bottom:8px; font-weight:bold; color:var(--flame);">CELL NUMBER*</label>
+            <input type="tel" name="phone" placeholder="Can I text you at this number?" required style="width:100%; padding:14px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
+        </div>
+        <div>
+            <label style="display:block; margin-bottom:8px; font-weight:bold; color:var(--flame);">FUEL TYPE*</label>
+            <select name="fuel_type" required style="width:100%; padding:14px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
+                <option value="">-- Select Fuel --</option>
+                <option value="Pellet">Pellet</option>
+                <option value="Gas/Propane">Gas / Propane</option>
+                <option value="Wood">Wood (Heating Only)</option>
+            </select>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
+        <div>
+            <label style="display:block; margin-bottom:8px; font-weight:bold; color:var(--flame);">APPLIANCE BRAND*</label>
+            <select name="brand" required style="width:100%; padding:14px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
+                <option value="">-- Select Brand --</option>
+                <option value="Whitfield">Whitfield</option>
+                <option value="Enviro">Enviro / Hudson River</option>
+                <option value="Harman">Harman</option>
+                <option value="Avalon">Avalon</option>
+                <option value="Lopi">Lopi / FPX / Travis Industries</option>
+                <option value="Quadra-Fire">Quadra-Fire</option>
+                <option value="Pelpro">Pelpro</option>
+                <option value="Heatilator">Heatilator</option>
+                <option value="Kozy Heat">Kozy Heat</option>
+                <option value="Pellet Master">Pellet Master</option>
+                <option value="Pacific Energy">Pacific Energy</option>
+                <option value="US Stove">US Stove</option>
+                <option value="Heat & Glo">Heat & Glo</option>
+                <option value="Vermont Castings">Vermont Castings</option>
+                <option value="Regency">Regency</option>
+                <option value="Majestic">Majestic</option>
+                <option value="Breckwell">Breckwell</option>
+                <option value="Blaze King">Blaze King</option>
+                <option value="Jotul">Jotul</option>
+                <option value="Other">OTHER (Describe in Notes)</option>
+            </select>
+        </div>
+        <div>
+            <label style="display:block; margin-bottom:8px; font-weight:bold; color:var(--flame);">MODEL NAME/NUMBER*</label>
+            <input type="text" name="brand_model" placeholder="e.g. Advantage II or M55" required style="width:100%; padding:14px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
+        </div>
+        <div>
+            <label style="display:block; margin-bottom:8px; font-weight:bold; color:var(--flame);">SERIAL NUMBER*</label>
+            <input type="text" name="serial" placeholder="Check the safety label" required style="width:100%; padding:14px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;">
+        </div>
+    </div>
+
+    <div style="margin-bottom: 20px; padding: 20px; background: rgba(255,102,0,0.05); border: 1px dashed var(--flame); border-radius: 8px;">
+    <label style="display:block; margin-bottom:8px; font-weight:bold; color:var(--flame);">"CRIME SCENE" PHOTOS (OPTIONAL)</label>
+    <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 12px; line-height: 1.4;">
+        <strong>MOBILE:</strong> Tap the button, then tap every photo you want to send.<br>
+        <strong>DESKTOP (PC):</strong> Hold <u>Ctrl</u> while clicking your files.<br>
+        <strong>DESKTOP (MAC):</strong> Hold <u>Command (⌘)</u> while clicking your files.
+    </p>
+    <input type="file" name="crime_scene_photos[]" accept="image/*" multiple style="width:100%; color:#fff;">
+    <p style="font-size: 0.75rem; color: #666; margin-top: 10px; font-style: italic;">
+        Include: Firebox, Exterior, UL Label, Venting/Cap, or Trouble Codes.
+    </p>
 </div>
+
+    <div style="margin-bottom: 30px;">
+        <label style="display:block; margin-bottom:8px; font-weight:bold; color:var(--flame);">DETAILED TROUBLESHOOTING NOTES*</label>
+        <textarea name="notes" rows="6" required placeholder="What is it doing (or not)? Give light codes (e.g. 2 short, 1 long blink), soot color (black/gray/brown), or issues like unburned pellets or lazy flames. Gas: Pilot on but no main burner?" style="width:100%; padding:14px; background:#000; color:#fff; border:1px solid #444; border-radius:4px;"></textarea>
+    </div>
+
+    <button type="submit" class="book-btn" style="width:100%; border:none; cursor:pointer; font-size: 1.4rem; padding: 20px !important; display: flex; align-items: center; justify-content: center; gap: 15px;">
+        SUBMIT CASE FOR TROUBLESHOOTING
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+    </button>
+</form>
+        </div>
+    </section>
+</main>
 
 <?php include 'footer.php'; ?>

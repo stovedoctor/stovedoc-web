@@ -28,7 +28,7 @@
 
         <details class="bg-tool-card faq-card">
             <summary class="bg-tool-content">
-                <h3>Do you fix cook stoves?</h3>
+                <h3>Do you help with cook stoves or other appliances?</h3>
             </summary>
             <div class="faq-content bg-tool-content">
                 <p>No. I specialize strictly in Pellet, Gas, and Wood heating appliances (Fireplaces, Inserts, and Free-standing stoves).</p>
@@ -40,7 +40,7 @@
                 <h3>Why is there a $75 fee?</h3>
             </summary>
             <div class="faq-content bg-tool-content">
-                <p>You're paying for 36 years of factory-trained logic. I save you from buying expensive parts you don't need and get your heat back on the same day.</p>
+                <p>You're paying over 35 years of factory-trained logic. I save you from buying expensive parts you don't need and get your heat back on the same day.</p>
             </div>
         </details>
 
@@ -71,4 +71,34 @@
 </section>
 </main>
 
-<?php include 'footer.php'; ?> 
+<section id="booking-unlock" class="section-wrapper" style="margin: 10px auto 60px auto; max-width: 900px;">
+    
+    <div class="info-card" style="padding: 25px 30px 30px 30px; border-top: 3px solid var(--flame); background: rgba(255,102,0,0.05); text-align: center;">
+        
+        <h2 style="color: var(--flame); font-size: clamp(1.6rem, 5vw, 2.2rem); margin-top: 0; margin-bottom: 10px; line-height: 1.1;">
+            STEP 2: START YOUR DIAGNOSIS
+        </h2>
+        
+        <p style="max-width: 650px; margin: 0 auto 25px auto; color: #fff; line-height: 1.4; text-align: center;">
+            By clicking below, you confirm you have reviewed the <strong>Clinic Protocols</strong> and understand that you are providing the hands and have tools/multimeter ready while I provide the expertise.
+        </p>
+        
+        <a href="booking.php" class="book-btn" style="display: inline-flex; align-items: center; gap: 12px; text-decoration: none;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                <line x1="4" y1="22" x2="4" y2="15"></line>
+            </svg>
+            
+            <div style="text-align: left;">
+                <span style="display: block; line-height: 1;">OPEN BOOKING FORM</span>
+                <span class="btn-sub" style="color: #000; opacity: 0.7;">Final Step: Provide Your Info</span>
+            </div>
+        </a>
+
+        <div style="margin-top: 25px; color: #666; font-size: 0.9rem; font-style: italic;">
+            "Stop guessing. Start fixing. Let's get your heat back on today."
+        </div>
+    </div>
+</section>
+
+<?php include 'footer.php'; ?>

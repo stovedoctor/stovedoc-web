@@ -91,9 +91,24 @@ include 'header.php';
                     <strong style="color:var(--flame);">— Valerie Wendeln, Breckwell P 24</strong>
                 </div>
             </div>
-        </div>
-    </section>
+    </div> <section class="section-wrapper" style="margin: 40px auto 60px auto; max-width: 900px;">
+            <div class="info-card" style="padding: 40px 20px; border-top: 3px solid var(--flame); background: rgba(255,102,0,0.05); text-align: center;">
+                
+                <p style="font-size: 1.2rem; color: #fff; margin-bottom: 15px; text-align: center !important;">
+                    Ready to see that experience in action?
+                </p>
+                
+                <a href="index.php" style="color: var(--flame); font-weight: 900; text-decoration: none; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 2px solid var(--flame); display: inline-block;">
+                    RETURN TO THE TELEHEARTH CLINIC →
+                </a>
 
+                <div style="margin-top: 25px; color: #666; font-size: 0.85rem; font-style: italic;">
+                    "Stop guessing. Start fixing. Let's get your fire back on today."
+                </div>
+            </div>
+        </section>
+
+    </section>
 </main>
 
 <?php include 'footer.php'; ?>
