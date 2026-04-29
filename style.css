@@ -155,7 +155,7 @@ a:hover { color: #ffffff; }
     font-weight: bold;
     box-shadow: 10px 2px 50px rgba(0, 0, 0, 0.5);
     transform: rotate(3deg); /* Slightly crooked for realism */
-    z-index: 6;
+    z-index: 10;
     border-left: 5px solid rgba(0,0,0,0.1);
 }
 /* --- TELEHEARTH CLINIC (MONITOR STYLE - NO STAND) --- */
@@ -175,23 +175,104 @@ a:hover { color: #ffffff; }
     overflow: hidden !important; 
    margin: 20px auto 0 auto !important;
 }
-
-
-.hero-clinic::after {
-    content: "TELEHEARTH 4K";
-    position: absolute;
-    bottom: 12px !important; /* Moved higher to clear the bezel and hidden overflow */
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.3) !important; /* Brighter etch */
-    font-size: 10px;
-    letter-spacing: 5px;
-    font-weight: 900;
-    z-index: 99 !important; /* Higher than background and text */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Adds a 'carved' depth */
-    pointer-events: none;
+/* --- THE SURGICAL TRAY (tools2.php Header) --- */
+.hero-tooltray {
+    width: 98% !important; 
+    max-width: 1100px !important; 
+    position: relative;
+    /* Red Snap-On style outer edge */
+    border: 12px solid #b30000 !important; 
+    border-bottom: 25px solid #800000 !important; 
+    border-radius: 4px; /* Sharper corners than the monitor */
+    box-sizing: border-box !important;
+    height: 400px !important; /* Exact same height as the monitor */
+    /* Silver inner lip + Deep recessed shadow to look like looking down into a tray */
+    box-shadow: inset 0 0 0 5px #777, inset 0 30px 40px rgba(0,0,0,0.8), inset 0 -10px 20px rgba(0,0,0,0.6), 0 10px 30px rgba(0,0,0,0.6);
+    /* Darkened background to simulate the black foam insert */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('handtoolsbits-sm.webp');
+    background-size: cover;
+    background-position: 50% 35%;
+    overflow: hidden !important; 
+    margin: 20px auto 0 auto !important;
+}
+/* --- THE DIAGNOSTIC CHART (faq.php Header) --- */
+.hero-faq {
+    width: 98% !important; 
+    max-width: 1100px !important; 
+    position: relative;
+    /* Professional Silver/Gray Clipboard Frame */
+    border: 12px solid #222 !important; 
+    border-top: 35px solid #666 !important;
+    border-radius: 10px; 
+    box-sizing: border-box !important;
+    height: 400px !important; 
+    /* Inset shadow to make the image look like paper sitting in the tray */
+    box-shadow: inset 0 2px 0 #888, inset 0 0 15px rgba(0,0,0,0.8), 0 10px 30px rgba(0,0,0,0.6);
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('faqheader.webp');
+    background-size: cover;
+    background-position: center 30%;
+    overflow: visible !important;
+    margin: 20px auto 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+/* THE METAL CLIP - Making it pop */
+.hero-faq::before {
+    content: "" !important;
+    position: absolute;
+    top: -28px; /* Perfectly centered on the 35px rail */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 20px;
+    background: linear-gradient(#aaa, #888) !important; /* Brushed Steel */
+    border: 1px solid #444;
+    border-radius: 4px 4px 2px 2px;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+/* --- THE LEGACY SHADOW BOX (legacy.php Header) --- */
+.hero-legacy {
+    width: 98% !important; 
+    max-width: 1100px !important; 
+    position: relative;
+    /* Deep Walnut Wood Frame */
+    border: 18px solid #3d2b1f !important; 
+    border-radius: 4px; 
+    box-sizing: border-box !important;
+    height: 400px !important; 
+    /* Deep inset for the 'Shadow Box' effect */
+    box-shadow: 
+        inset 0 0 40px rgba(0,0,0,0.9), 
+        0 15px 35px rgba(0,0,0,0.7);
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('thedoc.webp');
+    background-size: cover;
+    background-position: 50% 35%;
+    overflow: visible !important; 
+    margin: 20px auto 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* THE BRASS CORNER RIVETS */
+.hero-legacy::before, .hero-legacy::after {
+    content: "";
+    position: absolute;
+    width: 25px; height: 25px;
+    background: radial-gradient(#d4af37, #8b6508); /* Brass/Gold look */
+    border: 1px solid #5e450a;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.hero-legacy::before { top: -12px; left: -12px; } /* Top Left Rivet */
+.hero-legacy::after { bottom: -12px; right: -12px; } /* Bottom Right Rivet */
 .hero-clinic .tray-header-box {
     background: transparent !important;
     padding: 0;
@@ -506,6 +587,57 @@ footer {
         border-radius: 8px;
         overflow: hidden;
     }
+    .hero-tooltray { 
+        width: 96% !important; 
+        margin: 15px auto 10px auto !important; 
+        border: 8px solid #b30000 !important; 
+        border-bottom-width: 15px !important;
+        background-size: cover !important; 
+        background-position: center 40% !important;
+        height: auto !important; 
+        min-height: 60vw !important; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0 !important; 
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .hero-tooltray .header-content {
+        padding: 0 15px !important; 
+        width: 100%;
+        text-align: center;
+    }
+    .hero-faq { 
+        width: 96% !important; 
+        margin: 15px auto 10px auto !important; 
+        border: 8px solid #555 !important; 
+        border-top-width: 35px !important;
+        height: auto !important; 
+        min-height: 60vw !important; 
+        padding: 20px 0 !important;
+    }
+    .hero-faq::before {
+        width: 80px !important;
+        top: -28px !important;
+        height: 20px !important;
+    }
+    .hero-legacy { 
+        width: 96% !important; 
+        margin: 15px auto 10px auto !important; 
+        border: 10px solid #3d2b1f !important; 
+        height: auto !important; 
+        min-height: 60vw !important; 
+        padding: 20px 0 !important;
+    }
+    .hero-legacy::before, .hero-legacy::after {
+        width: 15px !important;
+        height: 15px !important;
+    }
+    .hero-legacy::before { top: -8px; left: -8px; }
+    .hero-legacy::after { bottom: -8px; right: -8px; }
     .hero-clinic::before {
         font-size: 0.55rem !important; 
         padding: 4px 6px !important; 

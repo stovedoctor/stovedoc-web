@@ -3,12 +3,12 @@ $page_title = "The Legacy | The Stove Doctor";
 include 'header.php'; 
 ?>
 
-<section class="topheader-vid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('tools_bg.jpg'); background-size: cover; background-position: center;">
+<section class="hero-legacy"> 
     <div class="header-content">
         <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo">
         <div class="tray-header-box">
             <h1>The Legacy</h1>
-            <div class="pill-text-unit">36 Years of Evolution <span class="mobile-break"></span> From Warehouse to Telehearth</div>
+            <div class="pill-text-unit">36 Years of Evolution from Warehouse to Telehearth</div>
         </div>
     </div>
 </section>

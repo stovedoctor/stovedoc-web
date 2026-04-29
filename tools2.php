@@ -4,7 +4,7 @@
   include 'header.php'; 
 ?>
 
-<section class="topheader-vid" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('handtoolsbits-lg.webp'); background-size: cover; background-position: center;">
+<section class="hero-tooltray"> 
     <div class="header-content">
         <img src="newstovedoc_logo.png" alt="The Stove Doc" class="hero-logo">
         <div class="tray-header-box">
